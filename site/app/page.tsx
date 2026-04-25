@@ -1,73 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const PROGRAMS = [
-  {
-    slug: "lightnet",
-    status: "active" as const,
-    meta: "Active · Nonprofit",
-    title: "LightNet",
-    body: "Experiential platform and knowledge bank focused on miracles, consciousness, and unconventional ways of doing things. Like Gaia TV, but you try it out in real life.",
-    arrow: "Visit lightnet.org",
-  },
-  {
-    slug: "spoon-bending-lab",
-    status: "active" as const,
-    meta: "Active · Monthly",
-    title: "Spoon Bending Lab",
-    body: "First Sundays in Sedona at Dream Magic and online. Mind over matter, in community, repeatedly, with witnesses.",
-    arrow: "Join the next session",
-  },
-  {
-    slug: "holomovement-purpose-lab",
-    status: "active" as const,
-    meta: "Active",
-    title: "Holomovement Purpose Lab",
-    body: "Small-group labs helping people discover and live their purpose in alignment with the whole.",
-    arrow: "Learn more",
-  },
-  {
-    slug: "starseed-academy",
-    status: "active" as const,
-    meta: "Active",
-    title: "Starseed Academy",
-    body: "For those who came here on assignment. A program for remembering who you are and what you're here to build. [Placeholder]",
-    arrow: "Apply",
-  },
-  {
-    slug: "global-awakening-tracker",
-    status: "dev" as const,
-    meta: "In development",
-    title: "Global Awakening Tracker",
-    body: "Charts humanity's journey toward more love, cooperation, and healing. A measurement instrument for the paradigm shift.",
-    arrow: "Get notified",
-  },
-  {
-    slug: "dream-machine",
-    status: "dev" as const,
-    meta: "In development",
-    title: "The Dream Machine",
-    body: "[Placeholder] A new device for collective dreaming, lucid practice, and shared subconscious exploration.",
-    arrow: "Get notified",
-  },
-];
-
-const ART = [
-  {
-    slug: "augmented-reality-art",
-    num: "01 / Augmented Reality Art",
-    title: "Sculpture, extended.",
-    body: "Raku-fired heads and surfaces brought alive by augmented reality overlay. Twenty years of physical objects that respond to the camera.",
-    image: "/images/ar-art-hero.jpg",
-  },
-  {
-    slug: "street-art",
-    num: "02 / Street Art",
-    title: "Public works.",
-    body: "Installed in cities and unexpected places. Out where the public lives.",
-    image: "/images/street-art-hero.jpg",
-  },
-];
+import { homepageProjects, type Project } from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -242,12 +175,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROGRAMS HEAD */}
-      <SectionHead num="§ 02 Programs">
+      {/* WORK HEAD */}
+      <SectionHead num="§ 02 Work">
         Where the work <em>lives</em>.
       </SectionHead>
 
-      {/* PROGRAMS GRID */}
+      {/* WORK GRID — 8 cards (6 programs + 2 art) */}
       <div
         style={{
           maxWidth: "1280px",
@@ -256,37 +189,14 @@ export default function Home() {
           gridTemplateColumns: "repeat(2, 1fr)",
           borderBottom: "3px solid var(--color-ink)",
         }}
-        className="programs-grid"
+        className="work-grid"
       >
-        {PROGRAMS.map((p, idx) => (
-          <ProgramCard
+        {homepageProjects.map((p, idx) => (
+          <ProjectCard
             key={p.slug}
-            program={p}
-            isLastRow={idx >= PROGRAMS.length - 2}
+            project={p}
+            isLastRow={idx >= homepageProjects.length - 2}
             isRightColumn={idx % 2 === 1}
-          />
-        ))}
-      </div>
-
-      {/* ART HEAD */}
-      <SectionHead num="§ 03 Art">
-        Two bodies of <em>work.</em>
-      </SectionHead>
-
-      {/* ART STRIP */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          borderBottom: "3px solid var(--color-ink)",
-        }}
-        className="art-grid"
-      >
-        {ART.map((piece, idx) => (
-          <ArtCard
-            key={piece.slug}
-            piece={piece}
-            isLast={idx === ART.length - 1}
           />
         ))}
       </div>
@@ -407,17 +317,17 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* Page-scoped media queries (Next.js inline style doesn't support media queries) */}
+      {/* page-scoped styles */}
       <style>{`
         @media (max-width: 900px) {
           .about-band-grid { grid-template-columns: 1fr !important; }
           .about-cell { padding: 40px 24px !important; border-left: none !important; border-top: 3px solid var(--color-ink); }
-          .programs-grid { grid-template-columns: 1fr !important; }
-          .art-grid { grid-template-columns: 1fr !important; }
+          .work-grid { grid-template-columns: 1fr !important; }
           .ticker-text { font-size: 18px !important; }
           .press-list { font-size: 22px !important; gap: 4px 32px !important; }
         }
         .about-cta:hover { background: var(--color-red) !important; }
+        .work-card:hover { background: var(--color-red-soft) !important; }
       `}</style>
     </>
   );
@@ -447,7 +357,6 @@ function SectionHead({
         alignItems: "end",
         borderBottom: "3px solid var(--color-ink)",
       }}
-      className="section-head-flex"
     >
       <div>
         <div
@@ -467,16 +376,25 @@ function SectionHead({
   );
 }
 
-type Program = (typeof PROGRAMS)[number];
-function ProgramCard({
-  program: p,
+function ProjectCard({
+  project: p,
   isLastRow,
   isRightColumn,
 }: {
-  program: Program;
+  project: Project;
   isLastRow: boolean;
   isRightColumn: boolean;
 }) {
+  const isActive = p.type === "program-active";
+  const isDev = p.type === "program-dev";
+  const isArt = p.type === "art";
+  const dotColor = isActive
+    ? "var(--color-red)"
+    : isDev
+    ? "var(--color-muted)"
+    : "var(--color-red)";
+  const dot = isActive ? "● " : isDev ? "◌ " : "▣ ";
+
   return (
     <Link
       href={`/work/${p.slug}`}
@@ -486,13 +404,12 @@ function ProgramCard({
         borderBottom: isLastRow ? "none" : "3px solid var(--color-ink)",
         background: "var(--color-white)",
         cursor: "pointer",
-        transition: "background 0.2s",
         display: "flex",
         flexDirection: "column",
         minHeight: "280px",
         position: "relative",
       }}
-      className="program-card"
+      className="work-card"
     >
       <div
         style={{
@@ -502,13 +419,10 @@ function ProgramCard({
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           marginBottom: "24px",
-          color:
-            p.status === "active"
-              ? "var(--color-red)"
-              : "var(--color-muted)",
+          color: dotColor,
         }}
       >
-        {p.status === "active" ? "● " : "◌ "}
+        {dot}
         {p.meta}
       </div>
       <h3
@@ -531,7 +445,7 @@ function ProgramCard({
           flex: 1,
         }}
       >
-        {p.body}
+        {p.shortDescription}
       </p>
       <div
         style={{
@@ -544,82 +458,7 @@ function ProgramCard({
           color: "var(--color-ink)",
         }}
       >
-        {p.arrow} →
-      </div>
-      <style>{`
-        .program-card:hover { background: var(--color-red-soft) !important; }
-      `}</style>
-    </Link>
-  );
-}
-
-type ArtPiece = (typeof ART)[number];
-function ArtCard({ piece, isLast }: { piece: ArtPiece; isLast: boolean }) {
-  return (
-    <Link
-      href={`/work/${piece.slug}`}
-      style={{
-        borderRight: isLast ? "none" : "3px solid var(--color-ink)",
-        background: "var(--color-white)",
-        overflow: "hidden",
-      }}
-      className="art-card"
-    >
-      <div
-        style={{
-          aspectRatio: "4 / 5",
-          overflow: "hidden",
-          borderBottom: "3px solid var(--color-ink)",
-          background: "var(--color-ink)",
-          position: "relative",
-        }}
-      >
-        <Image
-          src={piece.image}
-          alt={piece.title}
-          fill
-          sizes="(max-width: 900px) 100vw, 50vw"
-          style={{
-            objectFit: "cover",
-            transition: "transform 0.5s, filter 0.5s",
-            filter: "grayscale(0.1)",
-          }}
-        />
-      </div>
-      <div style={{ padding: "28px 32px" }}>
-        <div
-          style={{
-            fontFamily: "var(--font-jetbrains-mono), monospace",
-            fontSize: "12px",
-            fontWeight: 500,
-            color: "var(--color-red)",
-            letterSpacing: "0.12em",
-            textTransform: "uppercase",
-            marginBottom: "12px",
-          }}
-        >
-          {piece.num}
-        </div>
-        <h3
-          style={{
-            fontFamily: "var(--font-inter-tight), sans-serif",
-            fontSize: "36px",
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-            marginBottom: "8px",
-          }}
-        >
-          {piece.title}
-        </h3>
-        <p
-          style={{
-            fontSize: "14px",
-            color: "var(--color-muted)",
-            lineHeight: 1.5,
-          }}
-        >
-          {piece.body}
-        </p>
+        {p.cta ?? (isArt ? "View the work" : "Learn more")} →
       </div>
     </Link>
   );

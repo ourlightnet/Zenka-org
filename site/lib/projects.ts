@@ -1,5 +1,6 @@
 // Source-of-truth data for every project on zenka.org.
 // Edit here to update Work index + per-project pages.
+// Order matters: the first six entries are the homepage cards.
 
 export type ProjectType = "program-active" | "program-dev" | "art";
 
@@ -16,6 +17,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // ===== HOMEPAGE 6 (in order) =====
   {
     slug: "lightnet",
     title: "LightNet",
@@ -29,8 +31,8 @@ export const projects: Project[] = [
     cta: "Visit lightnet.org",
   },
   {
-    slug: "spoon-bending-lab",
-    title: "Spoon Bending Lab",
+    slug: "spoon-bending",
+    title: "Spoon Bending",
     type: "program-active",
     meta: "Active · First Sundays",
     shortDescription:
@@ -40,30 +42,19 @@ export const projects: Project[] = [
     cta: "Join the next session",
   },
   {
-    slug: "holomovement-purpose-lab",
-    title: "Holomovement Purpose Lab",
+    slug: "purpose-lab",
+    title: "Purpose Lab",
     type: "program-active",
     meta: "Active",
     shortDescription:
       "Small-group labs helping people discover and live their purpose in alignment with the whole.",
     longDescription:
-      "The Holomovement Purpose Lab is a small-group program helping people and communities remember who they are, why they are here, and what becomes possible when purpose is lived in alignment with the whole. Where inner development meets social innovation. (Holomovement is its own brand and ecosystem, not part of zenka.org. This page links out.)",
+      "The Purpose Lab is a small-group program helping people and communities remember who they are, why they are here, and what becomes possible when purpose is lived in alignment with the whole. Where inner development meets social innovation. (Run in partnership with the Holomovement.)",
     cta: "Learn more",
   },
   {
-    slug: "starseed-academy",
-    title: "Starseed Academy",
-    type: "program-active",
-    meta: "Active",
-    shortDescription:
-      "For those who came here on assignment. A program for remembering who you are and what you're here to build.",
-    longDescription:
-      "[Placeholder description, needs Zenka's words.] The Starseed Academy is for those who came here on assignment. A small-group container for remembering who you are, what you carry, and what you're here to build.",
-    cta: "Apply",
-  },
-  {
-    slug: "love-army",
-    title: "The Love Army",
+    slug: "the-love-army-won",
+    title: "The Love Army Won",
     type: "program-active",
     meta: "Active · Live",
     shortDescription:
@@ -74,17 +65,6 @@ export const projects: Project[] = [
     cta: "Visit thelovearmywon.com",
   },
   {
-    slug: "global-awakening-tracker",
-    title: "Global Awakening Tracker",
-    type: "program-dev",
-    meta: "In development · NOC",
-    shortDescription:
-      "Charts humanity's journey toward more love, cooperation, and healing. A measurement instrument for the paradigm shift.",
-    longDescription:
-      "The Global Awakening Tracker (NOC) charts humanity's journey toward more love, cooperation, and healing. A measurement instrument for the paradigm shift currently underway, designed to make the invisible breakthroughs trackable and shareable.",
-    cta: "Get notified",
-  },
-  {
     slug: "dream-machine",
     title: "The Dream Machine",
     type: "program-dev",
@@ -93,6 +73,41 @@ export const projects: Project[] = [
       "A device for collective dreaming, lucid practice, and shared subconscious exploration.",
     longDescription:
       "[Placeholder, needs full description.] The Dream Machine is a new device for collective dreaming, lucid practice, and shared subconscious exploration. Currently in development.",
+    cta: "Get notified",
+  },
+  {
+    slug: "fashion-lab-sedona",
+    title: "Fashion Lab Sedona",
+    type: "program-active",
+    meta: "Active · Sedona",
+    shortDescription:
+      "[Placeholder, needs Zenka's words.] A creative lab in Sedona at the intersection of fashion, consciousness, and community.",
+    longDescription:
+      "[Placeholder, needs Zenka's words.] Fashion Lab Sedona is a creative lab at the intersection of fashion, consciousness, and community, based in Sedona, AZ. More information coming soon.",
+    cta: "Get involved",
+  },
+
+  // ===== Other work (shown on /work, not on homepage) =====
+  {
+    slug: "starseed-academy",
+    title: "Starseed Academy",
+    type: "program-active",
+    meta: "Active",
+    shortDescription:
+      "For those who came here on assignment. A program for remembering who you are and what you're here to build.",
+    longDescription:
+      "[Placeholder, needs Zenka's words.] The Starseed Academy is for those who came here on assignment. A small-group container for remembering who you are, what you carry, and what you're here to build.",
+    cta: "Apply",
+  },
+  {
+    slug: "global-awakening-tracker",
+    title: "Global Awakening Tracker",
+    type: "program-dev",
+    meta: "In development · NOC",
+    shortDescription:
+      "Charts humanity's journey toward more love, cooperation, and healing. A measurement instrument for the paradigm shift.",
+    longDescription:
+      "The Global Awakening Tracker (NOC) charts humanity's journey toward more love, cooperation, and healing. A measurement instrument for the paradigm shift currently underway, designed to make the invisible breakthroughs trackable and shareable.",
     cta: "Get notified",
   },
   {
@@ -119,6 +134,12 @@ export const projects: Project[] = [
     heroImage: "/images/street-art-hero.jpg",
     cta: "View the work",
   },
+];
+
+// Homepage shows the 6 programs + 2 art = 8 cards in a single Work grid.
+export const homepageProjects = [
+  ...projects.slice(0, 6),
+  ...projects.filter((p) => p.type === "art"),
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
