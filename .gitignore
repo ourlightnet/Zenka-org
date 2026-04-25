@@ -1,0 +1,16 @@
+# Repo-root .gitignore for zenka-org
+
+# Scraped from old Squarespace site, large + reference-only, not deployed
+/archive/
+
+# Local-only HTML mockup artifacts (the chosen design lives in /site/)
+/mockups/
+
+# OS / editor cruft
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Catch any nested node_modules outside /site/
+node_modules/

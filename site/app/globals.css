@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Brand tokens for zenka.org (Direction D: bold red & white) */
+:root {
+  --color-white: #ffffff;
+  --color-off-white: #faf8f6;
+  --color-ink: #0e0e0e;
+  --color-muted: #5a5a5a;
+  --color-rule: #1a1a1a;
+  --color-red: #e30613;
+  --color-red-deep: #b30410;
+  --color-red-soft: #fff2f3;
+}
+
+@theme inline {
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-ink);
+  --color-brand-red: var(--color-red);
+  --color-brand-red-deep: var(--color-red-deep);
+  --color-brand-red-soft: var(--color-red-soft);
+  --color-brand-ink: var(--color-ink);
+  --color-brand-muted: var(--color-muted);
+  --font-display: var(--font-inter-tight);
+  --font-italic: var(--font-newsreader);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-inter-tight), -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* Page-level component classes */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 6px 14px;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--color-white);
+  display: inline-block;
+}
+
+.headline-display {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: clamp(56px, 9vw, 144px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+}
+.headline-display em {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-red);
+  letter-spacing: -0.02em;
+}
+
+.section-display {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.96;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+.section-display em {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-red);
+}
+
+.about-h2 {
+  font-family: var(--font-inter-tight), sans-serif;
+  font-size: 56px;
+  line-height: 0.96;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.about-h2 em {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-red);
+}
+
+@media (max-width: 900px) {
+  .about-h2 { font-size: 36px; }
+}
