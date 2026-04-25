@@ -61,8 +61,8 @@ export default function Home() {
           }}
           className="ticker-text"
         >
-          Spoon bending <Sep /> Group coherence <Sep /> Contact across the veil{" "}
-          <Sep /> Purpose discovery <Sep /> Levitation <Sep />{" "}
+          Spoon Bending <Sep /> Group Coherence <Sep /> Contact Across The Veil{" "}
+          <Sep /> Purpose Discovery <Sep /> Levitation <Sep />{" "}
           <em
             style={{
               fontFamily: "var(--font-newsreader), Georgia, serif",
@@ -70,7 +70,7 @@ export default function Home() {
               fontWeight: 500,
             }}
           >
-            Evidence-based wonder
+            Evidence-Based Wonder
           </em>
         </div>
       </div>
