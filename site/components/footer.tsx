@@ -15,7 +15,17 @@ export function Footer() {
       }}
       className="footer-grid"
     >
-      <div>v2.0 · Sedona, AZ</div>
+      <div>
+        Sedona, AZ ·{" "}
+        <a
+          href="https://instagram.com/zenkacaro"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "var(--color-red)", textDecoration: "underline" }}
+        >
+          Instagram
+        </a>
+      </div>
       <div
         style={{
           textAlign: "center",

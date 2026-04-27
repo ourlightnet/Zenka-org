@@ -31,7 +31,7 @@ export default function Home() {
             fontWeight: 400,
           }}
         >
-          Filmmaker, systems-builder, founder of{" "}
+          Systems-builder, filmmaker, founder of{" "}
           <strong style={{ color: "var(--color-red)", fontWeight: 600 }}>
             LightNet
           </strong>
@@ -61,17 +61,9 @@ export default function Home() {
           }}
           className="ticker-text"
         >
-          Spoon Bending <Sep /> Group Coherence <Sep /> Contact Across The Veil{" "}
-          <Sep /> Purpose Discovery <Sep /> Levitation <Sep />{" "}
-          <em
-            style={{
-              fontFamily: "var(--font-newsreader), Georgia, serif",
-              fontStyle: "italic",
-              fontWeight: 500,
-            }}
-          >
-            Evidence-Based Wonder
-          </em>
+          Spoon Bending <Sep /> Evidence Based Wonder <Sep /> Group Coherence{" "}
+          <Sep /> Purpose Activation <Sep /> Contact Across The Veil <Sep />{" "}
+          Levitation
         </div>
       </div>
 
@@ -99,8 +91,6 @@ export default function Home() {
             sizes="(max-width: 900px) 100vw, 50vw"
             style={{
               objectFit: "cover",
-              mixBlendMode: "multiply",
-              opacity: 0.95,
             }}
             priority
           />
@@ -226,24 +216,18 @@ export default function Home() {
           </div>
           <div
             style={{
-              display: "flex",
-              gap: "8px 64px",
-              flexWrap: "wrap",
               fontFamily: "var(--font-inter-tight), sans-serif",
               fontSize: "32px",
               fontWeight: 800,
               letterSpacing: "-0.02em",
-              lineHeight: 1.1,
+              lineHeight: 1.4,
             }}
             className="press-list"
           >
-            <span>TEDx Jackson Hole</span>
-            <span style={{ color: "var(--color-red)" }}>/</span>
-            <span>IONS</span>
-            <span style={{ color: "var(--color-red)" }}>/</span>
-            <span>The Tech Museum</span>
-            <span style={{ color: "var(--color-red)" }}>/</span>
-            <span>MAPA Buenos Aires</span>
+            TEDx Jackson Hole <span style={{ color: "var(--color-red)" }}>/</span>{" "}
+            IONS <span style={{ color: "var(--color-red)" }}>/</span>{" "}
+            The Tech Museum <span style={{ color: "var(--color-red)" }}>/</span>{" "}
+            MAPA Buenos Aires
           </div>
         </div>
       </section>
@@ -282,7 +266,7 @@ export default function Home() {
               textUnderlineOffset: "8px",
             }}
           >
-            impossible?
+            impossible.
           </em>
         </h2>
         <p
@@ -295,8 +279,7 @@ export default function Home() {
             marginRight: "auto",
           }}
         >
-          For speaking inquiries, partnerships, and serious collaboration on the
-          work that&apos;s coming.
+          For 90-minute leap sessions, partnerships, and speaking inquiries.
         </p>
         <Link
           href="/contact"
@@ -324,7 +307,7 @@ export default function Home() {
           .about-cell { padding: 40px 24px !important; border-left: none !important; border-top: 3px solid var(--color-ink); }
           .work-grid { grid-template-columns: 1fr !important; }
           .ticker-text { font-size: 18px !important; }
-          .press-list { font-size: 22px !important; gap: 4px 32px !important; }
+          .press-list { font-size: 22px !important; }
         }
         .about-cta:hover { background: var(--color-red) !important; }
         .work-card:hover { background: var(--color-red-soft) !important; }

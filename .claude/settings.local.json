@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__yoink__yoink",
+      "Bash(lsof:*)"
+    ]
+  }
+}

@@ -22,7 +22,7 @@ export const projects: Project[] = [
     slug: "lightnet",
     title: "LightNet",
     type: "program-active",
-    meta: "Active · Nonprofit",
+    meta: "Think Tank",
     shortDescription:
       "Experiential platform and knowledge bank for miracles, consciousness, and unconventional ways of doing things.",
     longDescription:
@@ -34,9 +34,9 @@ export const projects: Project[] = [
     slug: "spoon-bending",
     title: "Spoon Bending",
     type: "program-active",
-    meta: "Active · First Sundays",
+    meta: "Consciousness Research",
     shortDescription:
-      "Mind over matter, in community, repeatedly, with witnesses. First Sundays in Sedona at Dream Magic and online.",
+      "Mind over matter, in community, repeatedly, with witnesses. Originally launched as the PK Party at the IONS Conference in 2019.",
     longDescription:
       "The first Sunday of every month we get together in Sedona at Dream Magic and online to bend spoons with our minds. Originally launched as the PK Party at the 18th Annual IONS Conference (Institute of Noetic Sciences) in Santa Clara, July 2019. The premise is simple, the practice is rigorous: gather, intend, witness, repeat. Track what happens. Share the data.",
     cta: "Join the next session",
@@ -45,18 +45,18 @@ export const projects: Project[] = [
     slug: "purpose-lab",
     title: "Purpose Lab",
     type: "program-active",
-    meta: "Active",
+    meta: "360 - Lab, Film, Course",
     shortDescription:
-      "Small-group labs helping people discover and live their purpose in alignment with the whole.",
+      "Small-group labs helping people discover and live their purpose in alignment with the whole. A feature documentary captures the three-year arc of the work.",
     longDescription:
       "The Purpose Lab is a small-group program helping people and communities remember who they are, why they are here, and what becomes possible when purpose is lived in alignment with the whole. Where inner development meets social innovation. (Run in partnership with the Holomovement.)",
     cta: "Learn more",
   },
   {
     slug: "the-love-army-won",
-    title: "The Love Army Won",
+    title: "The Love Army",
     type: "program-active",
-    meta: "Active · Live",
+    meta: "Live",
     shortDescription:
       "Love, treated like infrastructure. 100 hand-picked humans, $500K each, one mission: prove that love spreads faster than fear.",
     longDescription:
@@ -67,23 +67,34 @@ export const projects: Project[] = [
   {
     slug: "dream-machine",
     title: "The Dream Machine",
-    type: "program-dev",
-    meta: "In development",
+    type: "program-active",
+    meta: "Abundance engine",
     shortDescription:
-      "A device for collective dreaming, lucid practice, and shared subconscious exploration.",
+      "A living experiment in new economies, contributionism, and conscious capital. Over $1.5M granted to community-led prototypes.",
     longDescription:
-      "[Placeholder, needs full description.] The Dream Machine is a new device for collective dreaming, lucid practice, and shared subconscious exploration. Currently in development.",
-    cta: "Get notified",
+      "The Dream Machine and the emerging City of Light, a living experiment in new economies, contributionism, and conscious capital. Through this platform, Zenka is prototyping new models for resourcing community-led innovation and joy-filled civilization design. To date, the Dream Machine has raised and granted out over $1.5 million dollars toward visionary prototypes spanning sustainable fashion labs, collaborative media studios, water research, and Indigenous-led initiatives around the world. Her larger mission is to help build replicable models of culture, community, and shared flourishing that future generations can inherit, adapt, and expand.",
+    cta: "Learn more",
+  },
+  {
+    slug: "business-consulting",
+    title: "Business Consulting",
+    type: "program-active",
+    meta: "Leap Session",
+    shortDescription:
+      "90-minute leap sessions to move your business or project forward. Strategic clarity for founders, leaders, and creatives navigating a meaningful next move.",
+    longDescription:
+      "Book a 90-minute leap session with Zenka to advance your business or project. Channeled from higher consciousness and grounded in the real world. Useful for founders, leaders, artists, and anyone navigating a meaningful next move.",
+    cta: "Book a session",
   },
   {
     slug: "fashion-lab-sedona",
     title: "Fashion Lab Sedona",
     type: "program-active",
-    meta: "Active · Sedona",
+    meta: "Sedona",
     shortDescription:
-      "[Placeholder, needs Zenka's words.] A creative lab in Sedona at the intersection of fashion, consciousness, and community.",
+      "Designers get 48 hours to create a runway collection from reclaimed materials. Now in its third year, with thousands in scholarships awarded.",
     longDescription:
-      "[Placeholder, needs Zenka's words.] Fashion Lab Sedona is a creative lab at the intersection of fashion, consciousness, and community, based in Sedona, AZ. More information coming soon.",
+      "Fashion Lab uses the Dream Machine template to turn pressure into possibility, giving designers just 48 hours to create a runway collection from reclaimed materials and bold imagination. Now in its third year, with thousands awarded in scholarships, the program blends sustainability, creativity, and real opportunity into a fashion experience built on reinvention.",
     cta: "Get involved",
   },
 
@@ -92,7 +103,7 @@ export const projects: Project[] = [
     slug: "starseed-academy",
     title: "Starseed Academy",
     type: "program-active",
-    meta: "Active",
+    meta: "Academy",
     shortDescription:
       "For those who came here on assignment. A program for remembering who you are and what you're here to build.",
     longDescription:
@@ -111,34 +122,22 @@ export const projects: Project[] = [
     cta: "Get notified",
   },
   {
-    slug: "augmented-reality-art",
-    title: "Augmented Reality Art",
+    slug: "zenka-artwork",
+    title: "Zenka Artwork",
     type: "art",
     meta: "Body of work",
     shortDescription:
-      "Raku-fired heads and surfaces brought alive by augmented reality overlay. Twenty years of physical objects that respond to the camera.",
+      "Augmented reality prints, raku-fired heads, and public street art. Featured at TEDx Jackson Hole, MAPA Buenos Aires, and The Tech Museum of Innovation.",
     longDescription:
-      "Augmented Reality Art is twenty-plus years of physical sculpture that responds to the camera. Raku-fired heads, gold-leaf clay remote controls, public installations, and AR-print drops (including the MAPA Buenos Aires NFT release in March 2022). The sculptures live in the world. The augmented reality lives over them.",
+      "Twenty years of art across two parallel bodies of work. Augmented Reality Art: raku-fired heads, gold-leaf clay remote controls, and AR-print drops, including the MAPA Buenos Aires NFT release in March 2022. The sculptures live in the world; the augmented reality lives over them. Street Art: public installations in cities and unexpected places, out where the public lives, where people who don't go to galleries can encounter the work.",
     heroImage: "/images/ar-art-hero.jpg",
-    cta: "View the work",
-  },
-  {
-    slug: "street-art",
-    title: "Street Art",
-    type: "art",
-    meta: "Body of work",
-    shortDescription:
-      "Public installations in cities and unexpected places. Out where the public lives.",
-    longDescription:
-      "Street Art is the body of public-facing work. Installations in cities and unexpected places. Out where the public lives, where people who don't go to galleries can encounter the work.",
-    heroImage: "/images/street-art-hero.jpg",
     cta: "View the work",
   },
 ];
 
-// Homepage shows the 6 programs + 2 art = 8 cards in a single Work grid.
+// Homepage shows the first 7 programs + 2 art = 9 cards in a single Work grid.
 export const homepageProjects = [
-  ...projects.slice(0, 6),
+  ...projects.slice(0, 7),
   ...projects.filter((p) => p.type === "art"),
 ];
 

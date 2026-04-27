@@ -212,6 +212,28 @@ export default function ContactPage() {
         >
           {EMAIL}
         </a>
+        <div
+          style={{
+            marginTop: "32px",
+            fontFamily: "var(--font-jetbrains-mono), monospace",
+            fontSize: "13px",
+            color: "var(--color-muted)",
+            letterSpacing: "0.06em",
+          }}
+        >
+          Or find Zenka on{" "}
+          <a
+            href="https://instagram.com/zenkacaro"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "var(--color-red)",
+              textDecoration: "underline",
+            }}
+          >
+            Instagram
+          </a>
+        </div>
       </section>
 
       {/* MAILCHIMP SIGNUP */}

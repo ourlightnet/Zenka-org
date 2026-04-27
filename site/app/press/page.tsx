@@ -51,7 +51,7 @@ export default function PressPage() {
             marginBottom: "24px",
           }}
         >
-          Twenty years of talks, interviews, films, and print coverage. Most of the archive below predates LightNet and documents Zenka&apos;s XR/AR pioneer era, the foundation the current consciousness work is built on.
+          Twenty years of talks, interviews, films, and print coverage. Most of the archive below predates LightNet and documents Zenka&apos;s XR/AR pioneer era, the foundation the current consciousness work is built on. Older entries appear under her former name, Jenny Carden.
         </p>
         <p
           style={{
