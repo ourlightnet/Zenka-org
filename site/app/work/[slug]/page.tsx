@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getProjectBySlug, allSlugs, projects } from "@/lib/projects";
+import { artworks } from "@/lib/artworks";
 
 export function generateStaticParams() {
   return allSlugs.map((slug) => ({ slug }));
@@ -185,6 +186,130 @@ export default async function ProjectPage({ params }: Params) {
           </Link>
         </div>
       </section>
+
+      {/* ARTWORK SUB-GRID — only on /work/zenka-artwork */}
+      {slug === "zenka-artwork" ? (
+        <section
+          style={{
+            borderTop: "3px solid var(--color-ink)",
+            padding: "80px 32px 32px",
+            maxWidth: "1280px",
+            margin: "0 auto",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "12px",
+              fontWeight: 500,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "var(--color-red)",
+              marginBottom: "24px",
+            }}
+          >
+            The body of work
+          </div>
+          <h2
+            className="section-display"
+            style={{
+              fontSize: "clamp(40px, 5vw, 72px)",
+              marginBottom: "56px",
+            }}
+          >
+            Series &amp; <em>installations.</em>
+          </h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "32px",
+            }}
+            className="artwork-grid"
+          >
+            {artworks.map((a) => (
+              <div key={a.slug} className="artwork-card">
+                <div
+                  style={{
+                    aspectRatio: "1 / 1",
+                    overflow: "hidden",
+                    background: "var(--color-ink)",
+                    position: "relative",
+                    border: "3px solid var(--color-ink)",
+                  }}
+                >
+                  <Image
+                    src={a.image}
+                    alt={a.title}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 33vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div style={{ paddingTop: "16px" }}>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-jetbrains-mono), monospace",
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--color-red)",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {a.category}
+                    {a.year ? ` · ${a.year}` : ""}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-inter-tight), sans-serif",
+                      fontSize: "24px",
+                      fontWeight: 800,
+                      letterSpacing: "-0.02em",
+                      lineHeight: 1.1,
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {a.title}
+                    {a.externalUrl ? (
+                      <a
+                        href={a.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          marginLeft: "6px",
+                          color: "var(--color-red)",
+                          fontSize: "16px",
+                        }}
+                      >
+                        ↗
+                      </a>
+                    ) : null}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      lineHeight: 1.55,
+                      color: "var(--color-muted)",
+                    }}
+                  >
+                    {a.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <style>{`
+            @media (max-width: 900px) {
+              .artwork-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            }
+            @media (max-width: 640px) {
+              .artwork-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
+        </section>
+      ) : null}
 
       {/* More projects */}
       <section

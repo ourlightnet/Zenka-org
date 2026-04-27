@@ -46,12 +46,23 @@ export default function PressPage() {
           style={{
             fontSize: "20px",
             lineHeight: 1.55,
-            color: "var(--color-muted)",
-            maxWidth: "720px",
-            marginBottom: "24px",
+            color: "var(--color-ink)",
+            maxWidth: "780px",
+            marginBottom: "20px",
           }}
         >
-          Twenty years of talks, interviews, films, and print coverage. Most of the archive below predates LightNet and documents Zenka&apos;s XR/AR pioneer era, the foundation the current consciousness work is built on. Older entries appear under her former name, Jenny Carden.
+          Zenka Caro is a speaker, media creator, and social architect whose work has been featured in papers, press, podcasts, conferences, and public forums exploring consciousness, purpose, innovation, and human potential. Known for making complex ideas feel alive and accessible, Zenka speaks at the intersection of science, spirituality, creativity, and systems change, inviting audiences to rethink what is possible for themselves and for society.
+        </p>
+        <p
+          style={{
+            fontSize: "20px",
+            lineHeight: 1.55,
+            color: "var(--color-ink)",
+            maxWidth: "780px",
+            marginBottom: "32px",
+          }}
+        >
+          Her voice is both visionary and practical: part field reporter from the future, part community builder, part spark plug for the impossible.
         </p>
         <p
           style={{
@@ -60,7 +71,7 @@ export default function PressPage() {
             color: "var(--color-ink)",
           }}
         >
-          For press inquiries:{" "}
+          Press inquiries:{" "}
           <a
             href="mailto:team@lightnet.org?subject=Press%20inquiry"
             style={{ color: "var(--color-red)", textDecoration: "underline" }}
@@ -69,6 +80,8 @@ export default function PressPage() {
           </a>
         </p>
       </section>
+
+      <FeaturedMedia />
 
       <PressSection title="Talks & Keynotes" entries={talks} />
       <PressSection title="Podcast, Film & Radio" entries={interviews} />
@@ -119,6 +132,135 @@ export default function PressPage() {
         </Link>
       </section>
     </>
+  );
+}
+
+function FeaturedMedia() {
+  const featured = [
+    {
+      videoId: "9Am9MsZWHHI",
+      title: "Asheville Wave: The 7 Stages of Purpose",
+      source: "Holomovement · 2025",
+    },
+    {
+      videoId: "2FA-IuDTMjE",
+      title: "Can Augmented Reality Bring Us to the Wisdom Age",
+      source: "TEDx Jackson Hole · 2016",
+    },
+    {
+      videoId: "wXevLd1v1Jg",
+      title: "Contacting ET (Ep. 2264)",
+      source: "FADE TO BLACK Radio · 2026",
+    },
+  ];
+  return (
+    <section
+      style={{
+        borderTop: "3px solid var(--color-ink)",
+        padding: "56px 32px",
+        maxWidth: "1280px",
+        margin: "0 auto",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--font-jetbrains-mono), monospace",
+          fontSize: "12px",
+          fontWeight: 500,
+          letterSpacing: "0.16em",
+          textTransform: "uppercase",
+          color: "var(--color-red)",
+          marginBottom: "20px",
+        }}
+      >
+        Featured media
+      </div>
+      <h2
+        className="section-display"
+        style={{
+          fontSize: "clamp(36px, 5vw, 64px)",
+          marginBottom: "40px",
+        }}
+      >
+        Watch &amp; <em>listen.</em>
+      </h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "24px",
+        }}
+        className="featured-grid"
+      >
+        {featured.map((f) => (
+          <div key={f.videoId} style={{ display: "block" }}>
+            <div
+              style={{
+                position: "relative",
+                aspectRatio: "16 / 9",
+                overflow: "hidden",
+                background: "var(--color-ink)",
+                border: "3px solid var(--color-ink)",
+              }}
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${f.videoId}?rel=0`}
+                title={f.title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: 0,
+                  display: "block",
+                }}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <div style={{ paddingTop: "14px" }}>
+              <h3
+                style={{
+                  fontFamily: "var(--font-inter-tight), sans-serif",
+                  fontSize: "18px",
+                  fontWeight: 700,
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1.25,
+                  marginBottom: "6px",
+                  color: "var(--color-ink)",
+                }}
+              >
+                <a
+                  href={`https://www.youtube.com/watch?v=${f.videoId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="featured-title"
+                  style={{ color: "inherit" }}
+                >
+                  {f.title}
+                </a>
+              </h3>
+              <div
+                style={{
+                  fontFamily: "var(--font-jetbrains-mono), monospace",
+                  fontSize: "11px",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "var(--color-muted)",
+                }}
+              >
+                {f.source}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <style>{`
+        .featured-title:hover { color: var(--color-red) !important; }
+        @media (max-width: 900px) {
+          .featured-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
+    </section>
   );
 }
 
