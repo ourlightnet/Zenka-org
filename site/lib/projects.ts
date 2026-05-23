@@ -94,7 +94,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fashion-lab-sedona",
-    title: "Fashion Lab Sedona",
+    title: "48 Hour Fashion Lab",
     type: "program-active",
     meta: "Sedona",
     shortDescription:
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     longDescription:
       "Fashion Lab uses the Dream Machine template to turn pressure into possibility, giving designers just 48 hours to create a runway collection from reclaimed materials and bold imagination. Now in its third year, with thousands awarded in scholarships, the program blends sustainability, creativity, and real opportunity into a fashion experience built on reinvention.",
     heroImage: "/images/projects/fashion-lab-sedona/hero.png",
-    cta: "Get involved",
+    cta: "Learn more",
   },
   {
     slug: "48-hour-comedy-lab",
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     longDescription:
       "The 48 Hour Comedy Lab applies the Fashion Lab format to stand-up. Comedians arrive Friday night, brainstorm and write all weekend, and perform a live show on Sunday. Pressure, possibility, and a few sets that wouldn't exist otherwise.",
     heroImage: "/images/projects/48-hour-comedy-lab/hero.png",
-    cta: "Get involved",
+    cta: "Learn more",
   },
 
   // ===== Other work (shown on /work, not on homepage) =====
