@@ -45,7 +45,7 @@ export const projects: Project[] = [
   },
   {
     slug: "purpose-lab",
-    title: "Purpose Lab",
+    title: "Holomovement Purpose Lab",
     type: "program-active",
     meta: "360 - Lab, Film, Course",
     shortDescription:
