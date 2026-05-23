@@ -24,9 +24,9 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "Think Tank",
     shortDescription:
-      "A 501(c)(3) consciousness research platform. Researchers worldwide log experiments and contribute to the first open consciousness research database.",
+      "The world's first consciousness research data platform. Six curiosity labs where people explore purpose, recovery, levitation, spoon bending, and the frontier edges of human potential.",
     longDescription:
-      "LightNet is a 501(c)(3) consciousness research platform where researchers worldwide log experiments, visualize their data, and contribute to the first open crowdsourced consciousness research database. Six specialized labs run small-group experiments across spoon bending, purpose, contact, healing, and more, building scientific rigor around what consciousness actually does. Built with consciousness, for consciousness, with 482 active participants and counting.",
+      "LightNet is the world's first consciousness research data platform and media platform built to test the impossible, gathering data from six curiosity labs where people explore purpose, recovery, levitation, spoon bending, and the frontier edges of human potential.",
     externalUrl: "https://lightnet.org",
     heroImage: "/images/projects/lightnet/hero.jpg",
     cta: "Visit lightnet.org",
