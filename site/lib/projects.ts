@@ -147,8 +147,8 @@ export const homepageProjects: Project[] = [
   "lightnet",
   "the-love-army-won",
   "purpose-lab",
-  "spoon-bending",
   "dream-machine",
+  "spoon-bending",
   "business-consulting",
 ].map((slug) => projects.find((p) => p.slug === slug)!);
 
