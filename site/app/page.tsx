@@ -196,8 +196,8 @@ export default function Home() {
       </div>
 
       {/* SECONDARY WORK GRID, 48 Hour Labs */}
-      <SectionHead num="§ 02b 48 Hour Labs">
-        48 Hour <em>Labs</em>.
+      <SectionHead num="§ 02b Also">
+        Also <em>in motion</em>.
       </SectionHead>
       <div
         style={{
