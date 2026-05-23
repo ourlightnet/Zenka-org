@@ -24,9 +24,9 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "Think Tank",
     shortDescription:
-      "Experiential platform and knowledge bank for miracles, consciousness, and unconventional ways of doing things.",
+      "A 501(c)(3) consciousness research platform. Researchers worldwide log experiments and contribute to the first open consciousness research database.",
     longDescription:
-      "LightNet is the first of its kind experiential platform and knowledge bank focused on miracles, consciousness, and unconventional ways of doing things. Like Gaia TV, but instead of watching, you try it out in real life. Quantum physicists are saying that consciousness is fundamental, more fundamental than matter. Want to see a UFO, bend a spoon with your mind, find your purpose, talk to a relative who has passed, or heal a health concern? Join a small group of eight with a guide, experiment, share your wisdom and wins, and help build a database of ranked methods, videos, music, articles, and more.",
+      "LightNet is a 501(c)(3) consciousness research platform where researchers worldwide log experiments, visualize their data, and contribute to the first open crowdsourced consciousness research database. Six specialized labs run small-group experiments across spoon bending, purpose, contact, healing, and more, building scientific rigor around what consciousness actually does. Built with consciousness, for consciousness, with 482 active participants and counting.",
     externalUrl: "https://lightnet.org",
     cta: "Visit lightnet.org",
   },

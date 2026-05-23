@@ -411,7 +411,7 @@ const ARCHIVES: Archive[] = [
     title: "White Mirror",
     description:
       "A create-a-thon where 150 people envisioned positive futures through storytelling, as a Black Mirror counterpoint.",
-    image: null,
+    image: "/images/archive/youtube.jpg",
     externalUrl: "https://www.zenka.org/white-mirror/",
   },
   {
@@ -419,7 +419,7 @@ const ARCHIVES: Archive[] = [
     title: "Triple Smart Labs",
     description:
       "An innovation lab network empowering citizen-driven science through shared hardware and collaborative research across distributed nodes.",
-    image: "/images/archive/Triple_Smart_Labs_-_5.jpg",
+    image: "/images/archive/TripleSmart-Animated-Logo.mp4",
     externalUrl: "https://www.zenka.org/triple-smart-labs/",
   },
   {
@@ -427,7 +427,7 @@ const ARCHIVES: Archive[] = [
     title: "Harmonic Convergence 2020",
     description:
       "A citizen science experiment where 72,000 people from 152 countries meditated together for contact and peace.",
-    image: null,
+    image: "/images/archive/thc-2020-hero.jpg",
     externalUrl: "https://www.zenka.org/thc2020/",
   },
   {
@@ -435,7 +435,7 @@ const ARCHIVES: Archive[] = [
     title: "Remote Controls",
     description:
       "Raku-fired clay remote controls with gold-leaf buttons, brought alive by augmented reality overlays.",
-    image: "/images/archive/Zenka-remote-controls_-_1.jpg",
+    image: "/images/archive/001b-Zenka-AR-Remote-28-Composite.jpg",
     externalUrl: "https://www.zenka.org/remote-controls/",
   },
   {
@@ -443,7 +443,7 @@ const ARCHIVES: Archive[] = [
     title: "Words of the Future",
     description:
       "A vocabulary project naming what does not yet have a name. Coining words for emerging realities.",
-    image: null,
+    image: "/images/archive/20481983_115296672456767_6712892888461606912_n.jpg",
     externalUrl: "https://www.zenka.org/wotf/",
   },
   {
