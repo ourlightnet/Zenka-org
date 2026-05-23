@@ -112,7 +112,7 @@ export const projects: Project[] = [
     shortDescription:
       "A 48-hour immersive lab that brings together Sedona comedians, editors, chefs, and production artists to create clean, uplifting short-form comedy inspired by Sedona's imagination and innovation. Culminates in a public release party at the Humankind Center plus a YouTube, Instagram, and TikTok campaign that promotes Sedona as the home of the renaissance.",
     longDescription:
-      "Comedy Lab Sedona is a 48-hour immersive lab that brings together Sedona comedians, editors, chefs, and production artists to create clean, uplifting short-form comedy inspired by Sedona's imagination and innovation. It culminates in a public release party at the Humankind Center plus a digital campaign across YouTube, Instagram, and TikTok that promotes Sedona as the home of the renaissance. Led by LightNet with local performers Daniel Flynn (Mary D. Fisher theater, Super Improv) and Jesselynn Desmond (Sedona improv).",
+      "The 48 Hour Comedy Lab is an immersive Sedona lab that brings together comedians, editors, chefs, and production artists to create clean, uplifting short-form comedy inspired by Sedona's imagination and innovation. It culminates in a public release party at the Humankind Center plus a digital campaign across YouTube, Instagram, and TikTok that promotes Sedona as the home of the renaissance. Led by LightNet with local performers Daniel Flynn (Mary D. Fisher theater, Super Improv) and Jesselynn Desmond (Sedona improv).",
     heroImage: "/images/projects/48-hour-comedy-lab/hero.png",
     cta: "Learn more",
   },
