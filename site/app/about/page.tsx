@@ -71,7 +71,7 @@ export default function AboutPage() {
           }}
         >
           <Image
-            src="/images/zenka-portrait.jpg"
+            src="/images/zenka-portrait.png"
             alt="Zenka Caro"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"

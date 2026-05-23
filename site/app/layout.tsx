@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Zenka Caro",
   description:
-    "Reality hacker and future architect. Systems-builder, filmmaker, founder of LightNet. She makes the invisible impossible to ignore.",
+    "Reality hacker and future architect. Systems-builder, filmmaker, founder of LightNet. I make the impossible possible.",
 };
 
 export default function RootLayout({

@@ -123,7 +123,7 @@ export const projects: Project[] = [
   },
   {
     slug: "zenka-artwork",
-    title: "Zenka Artwork",
+    title: "Zenka AR Artwork",
     type: "art",
     meta: "Body of work",
     shortDescription:

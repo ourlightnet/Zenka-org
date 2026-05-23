@@ -20,7 +20,7 @@ export default function Home() {
           className="headline-display"
           style={{ maxWidth: "1200px", marginBottom: "56px" }}
         >
-          She makes the invisible <em>impossible</em> to ignore.
+          I make the impossible <em>possible</em>.
         </h1>
         <p
           style={{
@@ -85,7 +85,7 @@ export default function Home() {
           }}
         >
           <Image
-            src="/images/zenka-portrait.jpg"
+            src="/images/zenka-portrait.png"
             alt="Zenka Caro"
             fill
             sizes="(max-width: 900px) 100vw, 50vw"
