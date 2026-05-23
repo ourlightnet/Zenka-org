@@ -142,8 +142,15 @@ export const projects: Project[] = [
   },
 ];
 
-// Main work grid: the first 6 programs (LightNet through Business Consulting).
-export const homepageProjects = projects.slice(0, 6);
+// Main work grid: explicit display order for the homepage.
+export const homepageProjects: Project[] = [
+  "lightnet",
+  "the-love-army-won",
+  "purpose-lab",
+  "spoon-bending",
+  "dream-machine",
+  "business-consulting",
+].map((slug) => projects.find((p) => p.slug === slug)!);
 
 // Below the main grid: Fashion Lab Sedona and Zenka AR Artwork.
 export const homepageSecondaryProjects = [
