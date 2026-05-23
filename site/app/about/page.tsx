@@ -35,7 +35,7 @@ export default function AboutPage() {
           className="headline-display"
           style={{ fontSize: "clamp(48px, 8vw, 112px)", marginBottom: "40px" }}
         >
-          I&apos;m a <em>reality hacker</em> and <em>future architect</em>.
+          Making the invisible <em>undeniable</em>.
         </h1>
         <p
           style={{
@@ -45,11 +45,12 @@ export default function AboutPage() {
             maxWidth: "780px",
           }}
         >
-          On a mission to upgrade human consciousness. As founder of{" "}
-          <strong style={{ color: "var(--color-red)" }}>LightNet</strong> I
-          design citizen-science experiments, group intelligence platforms, and
-          tech prototypes that explore how we break free from the old script and
-          step into our highest potential.
+          Zenka Caro is a filmmaker, systems-builder, and social architect. As
+          founder of{" "}
+          <strong style={{ color: "var(--color-red)" }}>LightNet</strong>, she
+          creates bold experiments, media, and small-group labs that help
+          people directly experience what becomes possible when consciousness,
+          purpose, and community come alive together.
         </p>
       </section>
 
@@ -90,7 +91,7 @@ export default function AboutPage() {
           className="about-page-cell"
         >
           <h2 className="about-h2" style={{ marginBottom: "32px" }}>
-            Mission &amp; <em>method</em>.
+            Her <em>method</em>.
           </h2>
           <p
             style={{
@@ -100,9 +101,10 @@ export default function AboutPage() {
               marginBottom: "16px",
             }}
           >
-            My work is in applied consciousness research: spoon bending, group
-            coherence, contact across the veil, purpose discovery, and even
-            levitation. Consciousness is measurable, shareable, and scalable.
+            Zenka is the creator of the Holomovement Purpose Lab, a multi-year
+            research initiative that generated a repeatable seven-stage process
+            for discovering and embodying purpose. Participant scores rose 88%
+            in wealth, 62% in love, and 41% in health after only 8 weeks.
           </p>
           <p
             style={{
@@ -112,10 +114,10 @@ export default function AboutPage() {
               marginBottom: "16px",
             }}
           >
-            With 20+ years in technology as a systems architect, software
-            designer, and XR/AR pioneer, I now focus on The Holomovement Purpose
-            Lab, the LightNet Impossible to Possible Coaching Program, The
-            Starseed Academy, and the LightNet Spoon Bending Lab.
+            She has also developed consciousness labs including the LightNet
+            Spoon Bending Lab, the Starseed Academy Levitation Lab, and Contact
+            Lab, designed as live inquiries into the capacities of human
+            awareness, intention, and collective field intelligence.
           </p>
           <p
             style={{
@@ -124,8 +126,9 @@ export default function AboutPage() {
               color: "var(--color-ink)",
             }}
           >
-            In development: The Dream Machine, the Holomovement Purpose Lab
-            Film, NOC, Joy Rides, and WAM.
+            She is the creator of The Unlimited Show, featuring visionary
+            thinkers, scientists, mystics, and changemakers exploring calling,
+            coherence, healing, and human evolution.
           </p>
         </div>
       </section>
@@ -148,35 +151,101 @@ export default function AboutPage() {
           }}
         >
           <p style={{ marginBottom: "20px" }}>
-            Zenka Caro is a social architect, filmmaker, educator, and systems
-            visionary devoted to helping people and communities remember who
-            they are, why they are here, and what becomes possible when purpose
-            is lived in alignment with the whole.
+            Her work fuses storytelling, citizen-science inquiry, and
+            evidence-based wonder to turn extraordinary ideas into grounded,
+            repeatable practices that build coherence, courage, and real-world
+            impact.
           </p>
           <p style={{ marginBottom: "20px" }}>
-            She is the Founder of LightNet, a nonprofit think tank and media
-            platform exploring consciousness, human potential, group coherence,
-            and the future of collective intelligence. Through documentaries,
-            educational labs, interviews, and public initiatives, her work
-            bridges inner development, social innovation, and the emerging
-            sciences of consciousness.
+            Based in Sedona, Arizona, Zenka is the architect of the Dream
+            Machine and the emerging City of Light, a living experiment in new
+            economies, contributionism, and conscious capital. Through this
+            platform, she is prototyping models for resourcing community-led
+            innovation and joy-filled civilization design.
           </p>
           <p style={{ marginBottom: "20px" }}>
-            She believes that we&apos;re standing at the edge of a paradigm
-            shift, and her role is to map the invisible breakthroughs happening
-            all around us, from spontaneous healing and telepathy to purpose
-            activation and quantum knowing, and make them visible, trackable,
-            and shareable. She does this by creating playful, rigorous
-            environments where curiosity leads, data matters, and wonder is
-            welcome.
+            To date, the Dream Machine has raised and granted over $1.5 million
+            toward prototypes spanning sustainable fashion labs, collaborative
+            media studios, water research, and Indigenous-led initiatives. Her
+            larger mission is to help build replicable models of culture,
+            community, and flourishing that future generations can inherit,
+            adapt, and expand.
+          </p>
+          <p style={{ marginBottom: "20px", fontWeight: 600 }}>
+            Zenka is here to help people stop outsourcing their power, remember
+            what they are, and start building the next world together.
           </p>
         </div>
 
+        {/* FIND HER ONLINE */}
         <div
           style={{
             marginTop: "56px",
             paddingTop: "40px",
             borderTop: "3px solid var(--color-ink)",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "12px",
+              fontWeight: 500,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "var(--color-red)",
+              marginBottom: "20px",
+            }}
+          >
+            Find her online
+          </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "24px",
+              flexWrap: "wrap",
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "15px",
+              fontWeight: 500,
+            }}
+          >
+            <a
+              href="https://www.lightnet.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-ink)", textDecoration: "underline" }}
+            >
+              lightnet.org ↗
+            </a>
+            <a
+              href="https://www.ourlightnet.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-ink)", textDecoration: "underline" }}
+            >
+              ourlightnet.org ↗
+            </a>
+            <a
+              href="https://www.zenka.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-ink)", textDecoration: "underline" }}
+            >
+              zenka.org ↗
+            </a>
+            <a
+              href="https://www.passionbe.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--color-ink)", textDecoration: "underline" }}
+            >
+              passionbe.com ↗
+            </a>
+          </div>
+        </div>
+
+        <div
+          style={{
+            marginTop: "40px",
             display: "flex",
             gap: "16px",
             flexWrap: "wrap",
