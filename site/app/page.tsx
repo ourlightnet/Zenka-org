@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { homepageProjects, type Project } from "@/lib/projects";
+import {
+  homepageProjects,
+  homepageSecondaryProjects,
+  type Project,
+} from "@/lib/projects";
 
 export default function Home() {
   return (
@@ -170,7 +174,7 @@ export default function Home() {
         Where the work <em>lives</em>.
       </SectionHead>
 
-      {/* WORK GRID — 8 cards (6 programs + 2 art) */}
+      {/* WORK GRID — main 6 programs */}
       <div
         style={{
           maxWidth: "1280px",
@@ -186,6 +190,30 @@ export default function Home() {
             key={p.slug}
             project={p}
             isLastRow={idx >= homepageProjects.length - 2}
+            isRightColumn={idx % 2 === 1}
+          />
+        ))}
+      </div>
+
+      {/* SECONDARY WORK GRID — Fashion Lab + AR Artwork */}
+      <SectionHead num="§ 02b Also">
+        Also <em>in motion</em>.
+      </SectionHead>
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          borderBottom: "3px solid var(--color-ink)",
+        }}
+        className="work-grid"
+      >
+        {homepageSecondaryProjects.map((p, idx) => (
+          <ProjectCard
+            key={p.slug}
+            project={p}
+            isLastRow={idx >= homepageSecondaryProjects.length - 2}
             isRightColumn={idx % 2 === 1}
           />
         ))}

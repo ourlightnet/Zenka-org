@@ -142,9 +142,12 @@ export const projects: Project[] = [
   },
 ];
 
-// Homepage shows the first 7 programs + 2 art = 9 cards in a single Work grid.
-export const homepageProjects = [
-  ...projects.slice(0, 7),
+// Main work grid: the first 6 programs (LightNet through Business Consulting).
+export const homepageProjects = projects.slice(0, 6);
+
+// Below the main grid: Fashion Lab Sedona and Zenka AR Artwork.
+export const homepageSecondaryProjects = [
+  ...projects.filter((p) => p.slug === "fashion-lab-sedona"),
   ...projects.filter((p) => p.type === "art"),
 ];
 
