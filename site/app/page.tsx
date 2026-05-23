@@ -219,65 +219,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* PAST EXPERIENCES LINK */}
-      <section
-        style={{
-          borderBottom: "3px solid var(--color-ink)",
-          padding: "64px 32px",
-          background: "var(--color-white)",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "32px",
-          }}
-        >
-          <div>
-            <div
-              style={{
-                fontFamily: "var(--font-jetbrains-mono), monospace",
-                fontSize: "12px",
-                fontWeight: 500,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: "var(--color-red)",
-                marginBottom: "8px",
-              }}
-            >
-              § 03 Past Experiences
-            </div>
-            <h2
-              className="section-display"
-              style={{ fontSize: "clamp(28px, 4vw, 48px)" }}
-            >
-              Twenty years of <em>experiments.</em>
-            </h2>
-          </div>
-          <Link
-            href="/past-experiences"
-            style={{
-              display: "inline-block",
-              padding: "18px 32px",
-              background: "var(--color-ink)",
-              color: "var(--color-white)",
-              fontFamily: "var(--font-jetbrains-mono), monospace",
-              fontSize: "13px",
-              fontWeight: 500,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-            }}
-          >
-            See past experiences →
-          </Link>
-        </div>
-      </section>
-
       {/* PRESS BAND */}
       <section
         style={{

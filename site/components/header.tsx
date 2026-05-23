@@ -33,7 +33,6 @@ export function Header() {
         }}
       >
         <NavLink href="/about">About</NavLink>
-        <NavLink href="/work">Work</NavLink>
         <NavLink href="/press">Press</NavLink>
       </nav>
 

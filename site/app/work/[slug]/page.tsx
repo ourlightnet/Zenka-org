@@ -171,7 +171,7 @@ export default async function ProjectPage({ params }: Params) {
             </Link>
           )}
           <Link
-            href="/work"
+            href="/"
             style={{
               padding: "16px 28px",
               background: "transparent",
@@ -184,7 +184,7 @@ export default async function ProjectPage({ params }: Params) {
               textTransform: "uppercase",
             }}
           >
-            ← All work
+            ← Home
           </Link>
         </div>
       </section>

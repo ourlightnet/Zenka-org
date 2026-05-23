@@ -252,7 +252,7 @@ export default function AboutPage() {
           }}
         >
           <Link
-            href="/work"
+            href="/"
             style={{
               padding: "16px 28px",
               background: "var(--color-ink)",
@@ -264,7 +264,7 @@ export default function AboutPage() {
               textTransform: "uppercase",
             }}
           >
-            See the work →
+            ← Back to home
           </Link>
           <Link
             href="/contact"
