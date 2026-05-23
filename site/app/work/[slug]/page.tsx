@@ -151,7 +151,7 @@ export default async function ProjectPage({ params }: Params) {
                 textTransform: "uppercase",
               }}
             >
-              {project.cta ?? "Visit site"} ↗
+              Visit the website ↗
             </a>
           ) : (
             <Link

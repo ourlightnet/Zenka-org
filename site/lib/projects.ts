@@ -29,7 +29,7 @@ export const projects: Project[] = [
       "LightNet is the world's first consciousness research data platform and media platform built to test the impossible, gathering data from six curiosity labs where people explore purpose, recovery, levitation, spoon bending, and the frontier edges of human potential.",
     externalUrl: "https://lightnet.org",
     heroImage: "/images/projects/lightnet/hero.jpg",
-    cta: "Visit lightnet.org",
+    cta: "Learn more",
   },
   {
     slug: "spoon-bending",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     longDescription:
       "After teaching over 1,100 people to bend spoons across 8 years and counting, Zenka Caro's Spoon Bending Lab turns the impossible into something you can hold in your hand. Learn to bend reality, break the spell of limitation, and step into lucid living.",
     heroImage: "/images/projects/spoon-bending/hero.png",
-    cta: "Join the next session",
+    cta: "Learn more",
   },
   {
     slug: "purpose-lab",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
       "The Love Army funds 100 hand-picked humans with $500,000 each to lead missions of love across every continent. With cameras rolling, comedians commentating, and scientists tracking the ripple, it treats love like infrastructure: funded, filmed, measured, and impossible to stop.",
     externalUrl: "https://thelovearmywon.com",
     heroImage: "/images/projects/love-army/hero.png",
-    cta: "Visit thelovearmywon.com",
+    cta: "Learn more",
   },
   {
     slug: "dream-machine",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     longDescription:
       "Book a 90-minute leap session with Zenka to advance your business or project. Channeled from higher consciousness and grounded in the real world. Useful for founders, leaders, artists, and anyone navigating a meaningful next move.",
     heroImage: "/images/zenka-portrait.png",
-    cta: "Book a session",
+    cta: "Learn more",
   },
   {
     slug: "fashion-lab-sedona",
