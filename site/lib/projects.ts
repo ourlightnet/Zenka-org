@@ -37,7 +37,7 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "Consciousness Research",
     shortDescription:
-      "1,100+ people taught to bend spoons across 8 years and counting. The impossible, turned into something you can hold in your hand.",
+      "After teaching over 1,100 people to bend spoons across 8 years and counting, Zenka Caro's Spoon Bending Lab turns the impossible into something you can hold in your hand. Learn to bend reality, break the spell of limitation, and step into lucid living.",
     longDescription:
       "After teaching over 1,100 people to bend spoons across 8 years and counting, Zenka Caro's Spoon Bending Lab turns the impossible into something you can hold in your hand. Learn to bend reality, break the spell of limitation, and step into lucid living.",
     heroImage: "/images/projects/spoon-bending/hero.png",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "360 - Lab, Film, Course",
     shortDescription:
-      "100+ Awaken Your Purpose interviews distilled into a 7-stage map for finding what you are here to do. A resource search engine, a feature film, and Teams of 8-12 to make it real.",
+      "The Purpose Lab turns 100+ Awaken Your Purpose podcast interviews into a 7-stage map for discovering what you are here to do. Through a resource search engine, a feature film, and Teams of 8-12, it helps people move from “What am I here to do?” into the courage, clarity, and community to actually do it.",
     longDescription:
       "The Purpose Lab turns 100+ Awaken Your Purpose podcast interviews into a 7-stage map for discovering what you are here to do. Through a resource search engine, a feature film, and Teams of 8-12, it helps people move from “What am I here to do?” into the courage, clarity, and community to actually do it.",
     heroImage: "/images/projects/purpose-lab/hero.png",
