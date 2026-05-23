@@ -104,6 +104,18 @@ export const projects: Project[] = [
     heroImage: "/images/projects/fashion-lab-sedona/hero.png",
     cta: "Get involved",
   },
+  {
+    slug: "48-hour-comedy-lab",
+    title: "48 Hour Comedy Lab",
+    type: "program-active",
+    meta: "Sedona",
+    shortDescription:
+      "Comedians get 48 hours to write, rehearse, and perform a brand new live set. The Fashion Lab format applied to laughter.",
+    longDescription:
+      "The 48 Hour Comedy Lab applies the Fashion Lab format to stand-up. Comedians arrive Friday night, brainstorm and write all weekend, and perform a live show on Sunday. Pressure, possibility, and a few sets that wouldn't exist otherwise.",
+    heroImage: "/images/projects/48-hour-comedy-lab/hero.png",
+    cta: "Get involved",
+  },
 
   // ===== Other work (shown on /work, not on homepage) =====
   {
@@ -152,10 +164,10 @@ export const homepageProjects: Project[] = [
   "business-consulting",
 ].map((slug) => projects.find((p) => p.slug === slug)!);
 
-// Below the main grid: Fashion Lab Sedona and Zenka AR Artwork.
+// Below the main grid: the 48 Hour Labs (Fashion + Comedy).
 export const homepageSecondaryProjects = [
-  ...projects.filter((p) => p.slug === "fashion-lab-sedona"),
-  ...projects.filter((p) => p.type === "art"),
+  projects.find((p) => p.slug === "fashion-lab-sedona")!,
+  projects.find((p) => p.slug === "48-hour-comedy-lab")!,
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

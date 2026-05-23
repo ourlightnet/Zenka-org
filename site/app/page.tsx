@@ -195,9 +195,9 @@ export default function Home() {
         ))}
       </div>
 
-      {/* SECONDARY WORK GRID — Fashion Lab + AR Artwork */}
-      <SectionHead num="§ 02b Also">
-        Also <em>in motion</em>.
+      {/* SECONDARY WORK GRID, 48 Hour Labs */}
+      <SectionHead num="§ 02b 48 Hour Labs">
+        48 Hour <em>Labs</em>.
       </SectionHead>
       <div
         style={{
@@ -218,6 +218,65 @@ export default function Home() {
           />
         ))}
       </div>
+
+      {/* PAST EXPERIENCES LINK */}
+      <section
+        style={{
+          borderBottom: "3px solid var(--color-ink)",
+          padding: "64px 32px",
+          background: "var(--color-white)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1280px",
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "32px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontFamily: "var(--font-jetbrains-mono), monospace",
+                fontSize: "12px",
+                fontWeight: 500,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "var(--color-red)",
+                marginBottom: "8px",
+              }}
+            >
+              § 03 Past Experiences
+            </div>
+            <h2
+              className="section-display"
+              style={{ fontSize: "clamp(28px, 4vw, 48px)" }}
+            >
+              Twenty years of <em>experiments.</em>
+            </h2>
+          </div>
+          <Link
+            href="/past-experiences"
+            style={{
+              display: "inline-block",
+              padding: "18px 32px",
+              background: "var(--color-ink)",
+              color: "var(--color-white)",
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "13px",
+              fontWeight: 500,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+            }}
+          >
+            See past experiences →
+          </Link>
+        </div>
+      </section>
 
       {/* PRESS BAND */}
       <section
@@ -328,7 +387,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* FROM THE ARCHIVES */}
+      {/* ARTWORK */}
       <section
         style={{
           borderTop: "3px solid var(--color-ink)",
@@ -336,63 +395,40 @@ export default function Home() {
           padding: "80px 32px",
         }}
       >
-        <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-          <div style={{ marginBottom: "48px" }}>
-            <div
-              style={{
-                fontFamily: "var(--font-jetbrains-mono), monospace",
-                fontSize: "12px",
-                fontWeight: 500,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: "var(--color-red)",
-                marginBottom: "16px",
-              }}
-            >
-              § 03 From the archives
-            </div>
-            <h2
-              className="section-display"
-              style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
-            >
-              Past <em>projects.</em>
-            </h2>
-            <p
-              style={{
-                fontSize: "16px",
-                lineHeight: 1.55,
-                color: "var(--color-muted)",
-                marginTop: "20px",
-                maxWidth: "720px",
-              }}
-            >
-              Twenty years of debate clubs, citizen science, salons, and AR drops.
-              The full image archive lives at{" "}
-              <Link
-                href="/archive"
-                style={{
-                  color: "var(--color-red)",
-                  fontWeight: 600,
-                  textDecoration: "underline",
-                }}
-              >
-                /archive
-              </Link>
-              .
-            </p>
-          </div>
+        <div style={{ maxWidth: "1280px", margin: "0 auto 48px" }}>
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "24px",
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "12px",
+              fontWeight: 500,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "var(--color-red)",
+              marginBottom: "16px",
             }}
-            className="archive-grid"
           >
-            {ARCHIVES.map((a) => (
-              <ArchiveCard key={a.slug} archive={a} />
-            ))}
+            § 04 Artwork
           </div>
+          <h2
+            className="section-display"
+            style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
+          >
+            The <em>work.</em>
+          </h2>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "24px",
+            maxWidth: "1280px",
+            margin: "0 auto",
+          }}
+          className="artwork-blocks-grid"
+        >
+          {ARTWORKS.map((a) => (
+            <ArtworkCard key={a.slug} item={a} />
+          ))}
         </div>
       </section>
 
@@ -402,143 +438,92 @@ export default function Home() {
           .about-band-grid { grid-template-columns: 1fr !important; }
           .about-cell { padding: 40px 24px !important; border-left: none !important; border-top: 3px solid var(--color-ink); }
           .work-grid { grid-template-columns: 1fr !important; }
-          .archive-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .artwork-blocks-grid { grid-template-columns: repeat(2, 1fr) !important; }
           .ticker-text { font-size: 18px !important; }
           .press-list { font-size: 22px !important; }
         }
         @media (max-width: 640px) {
-          .archive-grid { grid-template-columns: 1fr !important; }
+          .artwork-blocks-grid { grid-template-columns: 1fr !important; }
         }
         .about-cta:hover { background: var(--color-red) !important; }
         .work-card:hover { background: var(--color-red-soft) !important; }
-        .archive-card:hover { transform: translateY(-4px); }
+        .artwork-block img { transition: transform 0.4s ease; }
+        .artwork-block:hover img { transform: scale(1.04); }
       `}</style>
     </>
   );
 }
 
-type Archive = {
+type Artwork = {
   slug: string;
   title: string;
-  description: string;
   image: string | null;
-  externalUrl: string;
 };
 
-const ARCHIVES: Archive[] = [
+const ARTWORKS: Artwork[] = [
   {
-    slug: "yofu",
-    title: "Ye Old Futurist Union",
-    description:
-      "A debate club for the galactic age. Oxford-style discussions on AI, cryptocurrency, genetic engineering, and what comes next.",
-    image: "/images/archive/header-ye-olde-futurist-union.jpg",
-    externalUrl: "https://www.zenka.org/ye-old-futurist-union-la",
+    slug: "ar-linocuts",
+    title: "AR Linocuts",
+    image: "/images/archive/Zenka_ARPrint-LeapingIntoMagic-Large.jpg",
   },
   {
-    slug: "white-mirror",
-    title: "White Mirror",
-    description:
-      "A create-a-thon where 150 people envisioned positive futures through storytelling, as a Black Mirror counterpoint.",
-    image: "/images/archive/youtube.jpg",
-    externalUrl: "https://www.zenka.org/white-mirror/",
-  },
-  {
-    slug: "triple-smart-labs",
-    title: "Triple Smart Labs",
-    description:
-      "An innovation lab network empowering citizen-driven science through shared hardware and collaborative research across distributed nodes.",
-    image: "/images/archive/TripleSmart-Animated-Logo.mp4",
-    externalUrl: "https://www.zenka.org/triple-smart-labs/",
-  },
-  {
-    slug: "harmonic-convergence",
-    title: "Harmonic Convergence 2020",
-    description:
-      "A citizen science experiment where 72,000 people from 152 countries meditated together for contact and peace.",
-    image: "/images/archive/thc-2020-hero.jpg",
-    externalUrl: "https://www.zenka.org/thc2020/",
-  },
-  {
-    slug: "remote-controls",
-    title: "Remote Controls",
-    description:
-      "Raku-fired clay remote controls with gold-leaf buttons, brought alive by augmented reality overlays.",
-    image: "/images/archive/001b-Zenka-AR-Remote-28-Composite.jpg",
-    externalUrl: "https://www.zenka.org/remote-controls/",
+    slug: "ar-raku-headsets",
+    title: "AR Raku Headsets",
+    image: "/images/archive/the-clay-yard-zenka-head---1.jpg",
   },
   {
     slug: "words-of-the-future",
     title: "Words of the Future",
-    description:
-      "A vocabulary project naming what does not yet have a name. Coining words for emerging realities.",
     image: "/images/archive/20481983_115296672456767_6712892888461606912_n.jpg",
-    externalUrl: "https://www.zenka.org/wotf/",
   },
   {
-    slug: "interdimensional",
-    title: "Interdimensional Travel Agency",
-    description:
-      "An NFT collection reframing travel as movement between states of consciousness, not places.",
-    image: "/images/artwork/Zenka-Caro-NFT-Interdimensional-Travel-Agency.mp4",
-    externalUrl: "https://www.zenka.org/inter-dimensional-travel-agency/",
+    slug: "remote-controls",
+    title: "Remote Controls",
+    image: "/images/archive/001b-Zenka-AR-Remote-28-Composite.jpg",
+  },
+  {
+    slug: "street-art",
+    title: "Street Art",
+    image: null,
+  },
+  {
+    slug: "ar-murals",
+    title: "AR Murals",
+    image: null,
   },
 ];
 
-function ArchiveCard({ archive }: { archive: Archive }) {
-  const isVideo = archive.image
-    ? /\.(mp4|webm)$/i.test(archive.image)
-    : false;
+function ArtworkCard({ item }: { item: Artwork }) {
   return (
-    <a
-      href={archive.externalUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="archive-card"
+    <Link
+      href={`/art/${item.slug}`}
+      className="artwork-block"
       style={{
-        border: "3px solid var(--color-ink)",
-        background: "var(--color-white)",
-        display: "flex",
-        flexDirection: "column",
+        display: "block",
         textDecoration: "none",
         color: "inherit",
-        transition: "transform 0.2s",
       }}
     >
       <div
         style={{
-          aspectRatio: "4 / 3",
+          aspectRatio: "1 / 1",
           background: "var(--color-ink)",
           overflow: "hidden",
-          position: "relative",
+          border: "3px solid var(--color-ink)",
         }}
       >
-        {archive.image ? (
-          isVideo ? (
-            <video
-              src={archive.image}
-              muted
-              loop
-              autoPlay
-              playsInline
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-          ) : (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={archive.image}
-              alt={archive.title}
-              loading="lazy"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-          )
+        {item.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={item.image}
+            alt={item.title}
+            loading="lazy"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
         ) : (
           <div
             style={{
@@ -551,53 +536,29 @@ function ArchiveCard({ archive }: { archive: Archive }) {
               justifyContent: "center",
               color: "var(--color-white)",
               fontFamily: "var(--font-inter-tight), sans-serif",
-              fontSize: "72px",
+              fontSize: "96px",
               fontWeight: 900,
               letterSpacing: "-0.04em",
               opacity: 0.9,
             }}
           >
-            {archive.title.charAt(0)}
+            {item.title.charAt(0)}
           </div>
         )}
       </div>
-      <div style={{ padding: "20px 24px 24px" }}>
-        <div
-          style={{
-            fontFamily: "var(--font-jetbrains-mono), monospace",
-            fontSize: "10px",
-            fontWeight: 500,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color: "var(--color-muted)",
-            marginBottom: "10px",
-          }}
-        >
-          Archive ↗
-        </div>
-        <h3
-          style={{
-            fontFamily: "var(--font-inter-tight), sans-serif",
-            fontSize: "22px",
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-            lineHeight: 1.1,
-            marginBottom: "10px",
-          }}
-        >
-          {archive.title}
-        </h3>
-        <p
-          style={{
-            fontSize: "14px",
-            lineHeight: 1.5,
-            color: "var(--color-muted)",
-          }}
-        >
-          {archive.description}
-        </p>
-      </div>
-    </a>
+      <h3
+        style={{
+          marginTop: "16px",
+          fontFamily: "var(--font-inter-tight), sans-serif",
+          fontSize: "22px",
+          fontWeight: 800,
+          letterSpacing: "-0.02em",
+          lineHeight: 1.1,
+        }}
+      >
+        {item.title}
+      </h3>
+    </Link>
   );
 }
 
