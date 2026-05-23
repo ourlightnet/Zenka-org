@@ -28,6 +28,7 @@ export const projects: Project[] = [
     longDescription:
       "LightNet is a 501(c)(3) consciousness research platform where researchers worldwide log experiments, visualize their data, and contribute to the first open crowdsourced consciousness research database. Six specialized labs run small-group experiments across spoon bending, purpose, contact, healing, and more, building scientific rigor around what consciousness actually does. Built with consciousness, for consciousness, with 482 active participants and counting.",
     externalUrl: "https://lightnet.org",
+    heroImage: "/images/projects/lightnet/hero.jpg",
     cta: "Visit lightnet.org",
   },
   {
@@ -39,6 +40,7 @@ export const projects: Project[] = [
       "Mind over matter, in community, repeatedly, with witnesses. Originally launched as the PK Party at the IONS Conference in 2019.",
     longDescription:
       "The first Sunday of every month we get together in Sedona at Dream Magic and online to bend spoons with our minds. Originally launched as the PK Party at the 18th Annual IONS Conference (Institute of Noetic Sciences) in Santa Clara, July 2019. The premise is simple, the practice is rigorous: gather, intend, witness, repeat. Track what happens. Share the data.",
+    heroImage: "/images/projects/spoon-bending/hero.png",
     cta: "Join the next session",
   },
   {
@@ -50,6 +52,7 @@ export const projects: Project[] = [
       "Small-group labs helping people discover and live their purpose in alignment with the whole. A feature documentary captures the three-year arc of the work.",
     longDescription:
       "The Purpose Lab is a small-group program helping people and communities remember who they are, why they are here, and what becomes possible when purpose is lived in alignment with the whole. Where inner development meets social innovation. (Run in partnership with the Holomovement.)",
+    heroImage: "/images/projects/purpose-lab/hero.png",
     cta: "Learn more",
   },
   {
@@ -62,6 +65,7 @@ export const projects: Project[] = [
     longDescription:
       "The Love Army funds love the way the world funds war. 100 hand-picked humans from every continent each receive $500,000 to lead with love, find their purpose, and listen like their life depends on it. Their work happens in refugee camps, boardrooms, street corners, and comedy clubs. Documentary teams follow each soldier; high-vibe comedians ride along; researchers measure what coherence actually does. Year 1 of the Love Army costs about 1/10,000th of what the U.S. spends on war in a single year.",
     externalUrl: "https://thelovearmywon.com",
+    heroImage: "/images/projects/love-army/hero.png",
     cta: "Visit thelovearmywon.com",
   },
   {
@@ -73,6 +77,7 @@ export const projects: Project[] = [
       "A living experiment in new economies, contributionism, and conscious capital. Over $1.5M granted to community-led prototypes.",
     longDescription:
       "The Dream Machine and the emerging City of Light, a living experiment in new economies, contributionism, and conscious capital. Through this platform, Zenka is prototyping new models for resourcing community-led innovation and joy-filled civilization design. To date, the Dream Machine has raised and granted out over $1.5 million dollars toward visionary prototypes spanning sustainable fashion labs, collaborative media studios, water research, and Indigenous-led initiatives around the world. Her larger mission is to help build replicable models of culture, community, and shared flourishing that future generations can inherit, adapt, and expand.",
+    heroImage: "/images/projects/dream-machine/hero.png",
     cta: "Learn more",
   },
   {
@@ -84,6 +89,7 @@ export const projects: Project[] = [
       "90-minute leap sessions to move your business or project forward. Strategic clarity for founders, leaders, and creatives navigating a meaningful next move.",
     longDescription:
       "Book a 90-minute leap session with Zenka to advance your business or project. Channeled from higher consciousness and grounded in the real world. Useful for founders, leaders, artists, and anyone navigating a meaningful next move.",
+    heroImage: "/images/zenka-portrait.png",
     cta: "Book a session",
   },
   {
@@ -95,6 +101,7 @@ export const projects: Project[] = [
       "Designers get 48 hours to create a runway collection from reclaimed materials. Now in its third year, with thousands in scholarships awarded.",
     longDescription:
       "Fashion Lab uses the Dream Machine template to turn pressure into possibility, giving designers just 48 hours to create a runway collection from reclaimed materials and bold imagination. Now in its third year, with thousands awarded in scholarships, the program blends sustainability, creativity, and real opportunity into a fashion experience built on reinvention.",
+    heroImage: "/images/projects/fashion-lab-sedona/hero.png",
     cta: "Get involved",
   },
 

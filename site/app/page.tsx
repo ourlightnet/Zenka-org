@@ -382,8 +382,32 @@ export default function Home() {
           .archive-grid { grid-template-columns: 1fr !important; }
         }
         .about-cta:hover { background: var(--color-red) !important; }
-        .work-card:hover { background: var(--color-red-soft) !important; }
         .archive-card:hover { transform: translateY(-4px); }
+        .work-card-hover-bg {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          transition: opacity 0.35s ease;
+          pointer-events: none;
+        }
+        .work-card-hover-bg > img,
+        .work-card-hover-bg > video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .work-card-hover-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.78) 100%);
+        }
+        .work-card:hover .work-card-hover-bg { opacity: 1; }
+        .work-card:hover .work-card-content h3,
+        .work-card:hover .work-card-content p,
+        .work-card:hover .work-card-content > div {
+          color: var(--color-white) !important;
+        }
       `}</style>
     </>
   );
@@ -634,6 +658,9 @@ function ProjectCard({
     ? "var(--color-muted)"
     : "var(--color-red)";
   const dot = isActive ? "● " : isDev ? "◌ " : "▣ ";
+  const isVideo = p.heroImage
+    ? /\.(mp4|webm)$/i.test(p.heroImage)
+    : false;
 
   return (
     <Link
@@ -648,57 +675,81 @@ function ProjectCard({
         flexDirection: "column",
         minHeight: "280px",
         position: "relative",
+        overflow: "hidden",
       }}
       className="work-card"
     >
+      {p.heroImage ? (
+        <div className="work-card-hover-bg" aria-hidden>
+          {isVideo ? (
+            <video src={p.heroImage} muted loop autoPlay playsInline />
+          ) : (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={p.heroImage} alt="" loading="lazy" />
+          )}
+          <div className="work-card-hover-overlay" />
+        </div>
+      ) : null}
+
       <div
+        className="work-card-content"
         style={{
-          fontFamily: "var(--font-jetbrains-mono), monospace",
-          fontSize: "11px",
-          fontWeight: 500,
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          marginBottom: "24px",
-          color: dotColor,
-        }}
-      >
-        {dot}
-        {p.meta}
-      </div>
-      <h3
-        style={{
-          fontFamily: "var(--font-inter-tight), sans-serif",
-          fontSize: "36px",
-          lineHeight: 1.05,
-          fontWeight: 800,
-          letterSpacing: "-0.025em",
-          marginBottom: "16px",
-        }}
-      >
-        {p.title}
-      </h3>
-      <p
-        style={{
-          fontSize: "16px",
-          lineHeight: 1.55,
-          color: "var(--color-muted)",
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
           flex: 1,
         }}
       >
-        {p.shortDescription}
-      </p>
-      <div
-        style={{
-          marginTop: "24px",
-          fontFamily: "var(--font-jetbrains-mono), monospace",
-          fontSize: "12px",
-          fontWeight: 500,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          color: "var(--color-ink)",
-        }}
-      >
-        {p.cta ?? (isArt ? "View the work" : "Learn more")} →
+        <div
+          style={{
+            fontFamily: "var(--font-jetbrains-mono), monospace",
+            fontSize: "11px",
+            fontWeight: 500,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            marginBottom: "24px",
+            color: dotColor,
+          }}
+        >
+          {dot}
+          {p.meta}
+        </div>
+        <h3
+          style={{
+            fontFamily: "var(--font-inter-tight), sans-serif",
+            fontSize: "36px",
+            lineHeight: 1.05,
+            fontWeight: 800,
+            letterSpacing: "-0.025em",
+            marginBottom: "16px",
+          }}
+        >
+          {p.title}
+        </h3>
+        <p
+          style={{
+            fontSize: "16px",
+            lineHeight: 1.55,
+            color: "var(--color-muted)",
+            flex: 1,
+          }}
+        >
+          {p.shortDescription}
+        </p>
+        <div
+          style={{
+            marginTop: "24px",
+            fontFamily: "var(--font-jetbrains-mono), monospace",
+            fontSize: "12px",
+            fontWeight: 500,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "var(--color-ink)",
+          }}
+        >
+          {p.cta ?? (isArt ? "View the work" : "Learn more")} →
+        </div>
       </div>
     </Link>
   );
