@@ -49,9 +49,9 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "360 - Lab, Film, Course",
     shortDescription:
-      "Small-group labs helping people discover and live their purpose in alignment with the whole. A feature documentary captures the three-year arc of the work.",
+      "100+ Awaken Your Purpose interviews distilled into a 7-stage map for finding what you are here to do. A resource search engine, a feature film, and Teams of 8-12 to make it real.",
     longDescription:
-      "The Purpose Lab is a small-group program helping people and communities remember who they are, why they are here, and what becomes possible when purpose is lived in alignment with the whole. Where inner development meets social innovation. (Run in partnership with the Holomovement.)",
+      "The Purpose Lab turns 100+ Awaken Your Purpose podcast interviews into a 7-stage map for discovering what you are here to do. Through a resource search engine, a feature film, and Teams of 8-12, it helps people move from “What am I here to do?” into the courage, clarity, and community to actually do it.",
     heroImage: "/images/projects/purpose-lab/hero.png",
     cta: "Learn more",
   },
