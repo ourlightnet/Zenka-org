@@ -74,9 +74,9 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "Abundance engine",
     shortDescription:
-      "A living experiment in new economies, contributionism, and conscious capital. Over $1.5M granted to community-led prototypes.",
+      "A living experiment in new economies and best-case-scenario planning. Over $1.5 million distributed and counting, turning future-shaping ideas into funded reality.",
     longDescription:
-      "The Dream Machine and the emerging City of Light, a living experiment in new economies, contributionism, and conscious capital. Through this platform, Zenka is prototyping new models for resourcing community-led innovation and joy-filled civilization design. To date, the Dream Machine has raised and granted out over $1.5 million dollars toward visionary prototypes spanning sustainable fashion labs, collaborative media studios, water research, and Indigenous-led initiatives around the world. Her larger mission is to help build replicable models of culture, community, and shared flourishing that future generations can inherit, adapt, and expand.",
+      "Dream Machine is a living experiment in new economies, best-case-scenario planning, and what happens when intention, community, and capital back the most powerful prototypes on the planet. With over $1.5 million distributed and counting, it is turning future-shaping ideas into funded reality.",
     heroImage: "/images/projects/dream-machine/hero.png",
     cta: "Learn more",
   },
