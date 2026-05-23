@@ -77,8 +77,6 @@ export default function AboutPage() {
             sizes="(max-width: 900px) 100vw, 50vw"
             style={{
               objectFit: "cover",
-              mixBlendMode: "multiply",
-              opacity: 0.95,
             }}
             priority
           />
