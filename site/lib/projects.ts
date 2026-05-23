@@ -37,9 +37,9 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "Consciousness Research",
     shortDescription:
-      "Mind over matter, in community, repeatedly, with witnesses. Originally launched as the PK Party at the IONS Conference in 2019.",
+      "1,100+ people taught to bend spoons across 8 years and counting. The impossible, turned into something you can hold in your hand.",
     longDescription:
-      "The first Sunday of every month we get together in Sedona at Dream Magic and online to bend spoons with our minds. Originally launched as the PK Party at the 18th Annual IONS Conference (Institute of Noetic Sciences) in Santa Clara, July 2019. The premise is simple, the practice is rigorous: gather, intend, witness, repeat. Track what happens. Share the data.",
+      "After teaching over 1,100 people to bend spoons across 8 years and counting, Zenka Caro's Spoon Bending Lab turns the impossible into something you can hold in your hand. Learn to bend reality, break the spell of limitation, and step into lucid living.",
     heroImage: "/images/projects/spoon-bending/hero.png",
     cta: "Join the next session",
   },
