@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { getProjectBySlug, allSlugs, projects } from "@/lib/projects";
 import { artworks } from "@/lib/artworks";
+import { artworkImages } from "@/lib/artwork-images";
+import ImageGallery from "@/components/ImageGallery";
 
 export function generateStaticParams() {
   return allSlugs.map((slug) => ({ slug }));
@@ -308,6 +310,60 @@ export default async function ProjectPage({ params }: Params) {
               .artwork-grid { grid-template-columns: 1fr !important; }
             }
           `}</style>
+        </section>
+      ) : null}
+
+      {/* ARTWORK PHOTO GALLERY, only on /work/zenka-artwork */}
+      {slug === "zenka-artwork" ? (
+        <section
+          style={{
+            borderTop: "3px solid var(--color-ink)",
+            padding: "80px 32px",
+            maxWidth: "1600px",
+            margin: "0 auto",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "12px",
+              fontWeight: 500,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "var(--color-red)",
+              marginBottom: "24px",
+            }}
+          >
+            From the studio · {artworkImages.length} shots
+          </div>
+          <h2
+            className="section-display"
+            style={{
+              fontSize: "clamp(36px, 4.5vw, 64px)",
+              marginBottom: "48px",
+            }}
+          >
+            More from the <em>body of work.</em>
+          </h2>
+          <ImageGallery images={artworkImages} />
+          <p style={{ marginTop: "48px" }}>
+            <Link
+              href="/archive"
+              style={{
+                display: "inline-block",
+                padding: "14px 24px",
+                background: "var(--color-ink)",
+                color: "var(--color-white)",
+                fontFamily: "var(--font-jetbrains-mono), monospace",
+                fontSize: "12px",
+                fontWeight: 500,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+              }}
+            >
+              See the full archive →
+            </Link>
+          </p>
         </section>
       ) : null}
 
