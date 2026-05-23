@@ -410,6 +410,7 @@ export default function Home() {
           .archive-grid { grid-template-columns: 1fr !important; }
         }
         .about-cta:hover { background: var(--color-red) !important; }
+        .work-card:hover { background: var(--color-red-soft) !important; }
         .archive-card:hover { transform: translateY(-4px); }
       `}</style>
     </>
