@@ -61,7 +61,7 @@ export const projects: Project[] = [
     type: "program-active",
     meta: "Live",
     shortDescription:
-      "100 hand-picked humans with $500,000 each, leading missions of love across every continent. Love treated like infrastructure: funded, filmed, measured, and impossible to stop.",
+      "The Love Army funds 100 hand-picked humans with $500,000 each to lead missions of love across every continent. With cameras rolling, comedians commentating, and scientists tracking the ripple, it treats love like infrastructure: funded, filmed, measured, and impossible to stop.",
     longDescription:
       "The Love Army funds 100 hand-picked humans with $500,000 each to lead missions of love across every continent. With cameras rolling, comedians commentating, and scientists tracking the ripple, it treats love like infrastructure: funded, filmed, measured, and impossible to stop.",
     externalUrl: "https://thelovearmywon.com",
