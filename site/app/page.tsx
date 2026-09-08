@@ -125,10 +125,10 @@ export default function Home() {
           </h2>
           <p
             style={{
-              fontSize: "17px",
-              lineHeight: 1.65,
+              fontSize: "22px",
+              lineHeight: 1.55,
               color: "var(--color-ink)",
-              marginBottom: "16px",
+              marginBottom: "18px",
             }}
           >
             Twenty years at the edge of what&apos;s possible. First as a systems
@@ -137,10 +137,10 @@ export default function Home() {
           </p>
           <p
             style={{
-              fontSize: "17px",
-              lineHeight: 1.65,
+              fontSize: "22px",
+              lineHeight: 1.55,
               color: "var(--color-ink)",
-              marginBottom: "16px",
+              marginBottom: "18px",
             }}
           >
             I design playful, rigorous environments where curiosity leads, data
@@ -253,6 +253,7 @@ export default function Home() {
             className="press-list"
           >
             TEDx Jackson Hole <span style={{ color: "var(--color-red)" }}>/</span>{" "}
+            Sotheby&apos;s <span style={{ color: "var(--color-red)" }}>/</span>{" "}
             IONS <span style={{ color: "var(--color-red)" }}>/</span>{" "}
             The Tech Museum <span style={{ color: "var(--color-red)" }}>/</span>{" "}
             MAPA Buenos Aires
@@ -310,7 +311,7 @@ export default function Home() {
           For 90-minute leap sessions, partnerships, and speaking inquiries.
         </p>
         <Link
-          href="/contact"
+          href="/work/business-consulting"
           style={{
             display: "inline-block",
             padding: "22px 48px",
@@ -354,7 +355,7 @@ export default function Home() {
             className="section-display"
             style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
           >
-            The <em>work.</em>
+            Futuristic <em>Artwork.</em>
           </h2>
         </div>
         <div
@@ -387,7 +388,26 @@ export default function Home() {
           .artwork-blocks-grid { grid-template-columns: 1fr !important; }
         }
         .about-cta:hover { background: var(--color-red) !important; }
-        .work-card:hover { background: var(--color-red-soft) !important; }
+
+        /* Work-card image cross-fade. Image fades in, text fades out.
+           Hover only fires on devices that can actually hover (i.e. mouse).
+           On touch devices, cards stay text-only so taps go to the page. */
+        .work-card-image {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          opacity: 0;
+          transition: opacity 0.35s ease;
+          pointer-events: none;
+        }
+        .work-card-text {
+          transition: opacity 0.25s ease;
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .work-card:hover .work-card-image { opacity: 1; }
+          .work-card:hover .work-card-text { opacity: 0; }
+        }
+
         .artwork-block img { transition: transform 0.4s ease; }
         .artwork-block:hover img { transform: scale(1.04); }
       `}</style>
@@ -399,45 +419,49 @@ type Artwork = {
   slug: string;
   title: string;
   image: string | null;
+  href?: string;        // override default /art/[slug] href
+  video?: string;       // optional autoplay loop video (mp4); poster = image
 };
 
 const ARTWORKS: Artwork[] = [
   {
     slug: "ar-linocuts",
     title: "AR Linocuts",
-    image: "/images/archive/Zenka_ARPrint-LeapingIntoMagic-Large.jpg",
+    image: "/images/home/artwork/ar-linocuts.jpg",
   },
   {
     slug: "ar-raku-headsets",
     title: "AR Raku Headsets",
-    image: "/images/archive/the-clay-yard-zenka-head---1.jpg",
+    image: "/images/home/artwork/ar-raku-headsets.jpg",
   },
   {
     slug: "words-of-the-future",
     title: "Words of the Future",
-    image: "/images/archive/20481983_115296672456767_6712892888461606912_n.jpg",
+    image: "/images/home/artwork/words-of-the-future.jpg",
   },
   {
     slug: "remote-controls",
     title: "Remote Controls",
-    image: "/images/archive/001b-Zenka-AR-Remote-28-Composite.jpg",
-  },
-  {
-    slug: "street-art",
-    title: "Street Art",
-    image: null,
+    image: "/images/home/artwork/remote-controls.jpg",
   },
   {
     slug: "ar-murals",
     title: "AR Murals",
-    image: null,
+    image: "/images/home/artwork/ar-murals.jpg",
+  },
+  {
+    slug: "interdimensional-travel-agency",
+    title: "Interdimensional Travel Agency",
+    image: "/images/projects/interdimensional/poster.jpg",
+    video: "/images/projects/interdimensional/hover.mp4",
+    href: "/past/interdimensional",
   },
 ];
 
 function ArtworkCard({ item }: { item: Artwork }) {
   return (
     <Link
-      href={`/art/${item.slug}`}
+      href={item.href ?? `/art/${item.slug}`}
       className="artwork-block"
       style={{
         display: "block",
@@ -453,7 +477,17 @@ function ArtworkCard({ item }: { item: Artwork }) {
           border: "3px solid var(--color-ink)",
         }}
       >
-        {item.image ? (
+        {item.video ? (
+          <video
+            src={item.video}
+            poster={item.image ?? undefined}
+            muted
+            loop
+            autoPlay
+            playsInline
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        ) : item.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={item.image}
@@ -564,6 +598,11 @@ function ProjectCard({
     ? "var(--color-muted)"
     : "var(--color-red)";
   const dot = isActive ? "● " : isDev ? "◌ " : "▣ ";
+
+  // Hover image: prefer a dedicated /hover.jpg if set, else fall back to
+  // the hero image. The cross-fade is handled in the .work-card CSS below.
+  const swapImage = p.hoverImage || p.heroImage;
+
   return (
     <Link
       href={`/work/${p.slug}`}
@@ -577,57 +616,87 @@ function ProjectCard({
         flexDirection: "column",
         minHeight: "280px",
         position: "relative",
+        overflow: "hidden",
       }}
       className="work-card"
     >
+      {/* Hover image — sits behind the text, fades in on hover.
+          The card itself is locked to a 4:3 aspect ratio (see CSS below)
+          so 1200x900 hover images fit perfectly edge-to-edge with no
+          letterbox and no crop. objectFit: cover is a safety net for
+          any tiny aspect mismatch. */}
+      {swapImage ? (
+        <div className="work-card-image" aria-hidden="true">
+          <Image
+            src={swapImage}
+            alt=""
+            fill
+            sizes="(max-width: 900px) 100vw, 33vw"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      ) : null}
+
+      {/* Text content — fades out on hover so the image takes over */}
       <div
+        className="work-card-text"
         style={{
-          fontFamily: "var(--font-jetbrains-mono), monospace",
-          fontSize: "11px",
-          fontWeight: 500,
-          letterSpacing: "0.14em",
-          textTransform: "uppercase",
-          marginBottom: "24px",
-          color: dotColor,
-        }}
-      >
-        {dot}
-        {p.meta}
-      </div>
-      <h3
-        style={{
-          fontFamily: "var(--font-inter-tight), sans-serif",
-          fontSize: "36px",
-          lineHeight: 1.05,
-          fontWeight: 800,
-          letterSpacing: "-0.025em",
-          marginBottom: "16px",
-        }}
-      >
-        {p.title}
-      </h3>
-      <p
-        style={{
-          fontSize: "16px",
-          lineHeight: 1.55,
-          color: "var(--color-muted)",
+          display: "flex",
+          flexDirection: "column",
           flex: 1,
+          position: "relative",
+          zIndex: 2,
         }}
       >
-        {p.shortDescription}
-      </p>
-      <div
-        style={{
-          marginTop: "24px",
-          fontFamily: "var(--font-jetbrains-mono), monospace",
-          fontSize: "12px",
-          fontWeight: 500,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          color: "var(--color-ink)",
-        }}
-      >
-        {p.cta ?? (isArt ? "View the work" : "Learn more")} →
+        <div
+          style={{
+            fontFamily: "var(--font-jetbrains-mono), monospace",
+            fontSize: "11px",
+            fontWeight: 500,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            marginBottom: "24px",
+            color: dotColor,
+          }}
+        >
+          {dot}
+          {p.meta}
+        </div>
+        <h3
+          style={{
+            fontFamily: "var(--font-inter-tight), sans-serif",
+            fontSize: "36px",
+            lineHeight: 1.05,
+            fontWeight: 800,
+            letterSpacing: "-0.025em",
+            marginBottom: "16px",
+          }}
+        >
+          {p.title}
+        </h3>
+        <p
+          style={{
+            fontSize: "22px",
+            lineHeight: 1.5,
+            color: "var(--color-muted)",
+            flex: 1,
+          }}
+        >
+          {p.shortDescription}
+        </p>
+        <div
+          style={{
+            marginTop: "24px",
+            fontFamily: "var(--font-jetbrains-mono), monospace",
+            fontSize: "12px",
+            fontWeight: 500,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "var(--color-ink)",
+          }}
+        >
+          {p.cta ?? (isArt ? "View the work" : "Learn more")} →
+        </div>
       </div>
     </Link>
   );

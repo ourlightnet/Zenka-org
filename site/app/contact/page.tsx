@@ -1,45 +1,29 @@
-import Link from "next/link";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 export const metadata = {
-  title: "Contact — Zenka Caro",
+  title: "Contact Zenka Caro — Speaking, Partnerships, Press",
   description:
-    "Reach Zenka for speaking, partnerships, lab participation, press, and collaboration inquiries.",
+    "Book Zenka Caro for speaking engagements, keynotes, partnerships, lab participation, press inquiries, and collaboration. Founder of LightNet, the world's first consciousness research data platform. Email team@lightnet.org.",
+  keywords: [
+    "Book Zenka Caro",
+    "Zenka Caro speaking",
+    "consciousness keynote",
+    "spoon bending workshop",
+    "Holomovement Wave speaker",
+    "LightNet press inquiry",
+    "Zenka Caro contact",
+    "augmented reality speaker",
+    "Sedona keynote speaker",
+    "Holomovement Purpose Lab booking",
+    "team@lightnet.org",
+  ],
+  openGraph: {
+    title: "Contact Zenka Caro — Speaking, Partnerships, Press",
+    description:
+      "Book Zenka for speaking, partnerships, lab participation, and press. Founder of LightNet.",
+    images: ["/images/Zenka-Caro-Portrait.jpg"],
+  },
 };
-
-const INQUIRY_TYPES = [
-  {
-    label: "Speaking & keynotes",
-    description:
-      "Book Zenka for a conference, festival, panel, or curated gathering.",
-    subject: "Speaking inquiry",
-  },
-  {
-    label: "Partnerships & collaboration",
-    description:
-      "Co-creating an experiment, a film, a research project, or a body of work.",
-    subject: "Partnership inquiry",
-  },
-  {
-    label: "Lab participation",
-    description:
-      "Joining the Spoon Bending Lab, Purpose Lab, Starseed Academy, or other LightNet programs.",
-    subject: "Lab participation",
-  },
-  {
-    label: "Press & media",
-    description:
-      "Interviews, features, photos, bios, and quotes for journalists.",
-    subject: "Press inquiry",
-  },
-  {
-    label: "Something else",
-    description:
-      "Doesn't fit a box? Tell Zenka what you're up to.",
-    subject: "Hello",
-  },
-];
-
-const EMAIL = "team@lightnet.org";
 
 export default function ContactPage() {
   return (
@@ -84,105 +68,18 @@ export default function ContactPage() {
             maxWidth: "720px",
           }}
         >
-          For speaking, partnerships, lab participation, press, and serious collaboration on the work that&apos;s coming. Pick the closest box, click, and the email opens with a useful subject line already filled in.
+          For speaking, partnerships, lab participation, press.
         </p>
       </section>
-
-      {/* INQUIRY CARDS */}
-      <div
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
-          borderTop: "3px solid var(--color-ink)",
-          borderBottom: "3px solid var(--color-ink)",
-        }}
-        className="contact-grid"
-      >
-        {INQUIRY_TYPES.map((t, idx) => {
-          const isLastRow =
-            idx >=
-            INQUIRY_TYPES.length -
-              (INQUIRY_TYPES.length % 2 === 0 ? 2 : 1);
-          const isRightColumn = idx % 2 === 1;
-          return (
-            <a
-              key={t.label}
-              href={`mailto:${EMAIL}?subject=${encodeURIComponent(t.subject)}`}
-              style={{
-                padding: "40px 32px",
-                borderRight: isRightColumn
-                  ? "none"
-                  : "3px solid var(--color-ink)",
-                borderBottom: isLastRow ? "none" : "3px solid var(--color-ink)",
-                background: "var(--color-white)",
-                display: "flex",
-                flexDirection: "column",
-                minHeight: "200px",
-              }}
-              className="contact-card"
-            >
-              <div
-                style={{
-                  fontFamily: "var(--font-jetbrains-mono), monospace",
-                  fontSize: "11px",
-                  fontWeight: 500,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "var(--color-red)",
-                  marginBottom: "20px",
-                }}
-              >
-                ● Inquiry
-              </div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-inter-tight), sans-serif",
-                  fontSize: "32px",
-                  fontWeight: 800,
-                  letterSpacing: "-0.025em",
-                  lineHeight: 1.05,
-                  marginBottom: "14px",
-                }}
-              >
-                {t.label}
-              </h3>
-              <p
-                style={{
-                  fontSize: "15px",
-                  lineHeight: 1.55,
-                  color: "var(--color-muted)",
-                  flex: 1,
-                }}
-              >
-                {t.description}
-              </p>
-              <div
-                style={{
-                  marginTop: "20px",
-                  fontFamily: "var(--font-jetbrains-mono), monospace",
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "var(--color-ink)",
-                }}
-              >
-                Email Zenka →
-              </div>
-            </a>
-          );
-        })}
-      </div>
 
       {/* DIRECT EMAIL */}
       <section
         style={{
           maxWidth: "1100px",
           margin: "0 auto",
-          padding: "80px 32px",
+          padding: "80px 32px 80px",
           textAlign: "center",
+          borderTop: "3px solid var(--color-ink)",
         }}
       >
         <div
@@ -192,67 +89,53 @@ export default function ContactPage() {
             letterSpacing: "0.16em",
             textTransform: "uppercase",
             color: "var(--color-muted)",
-            marginBottom: "16px",
+            marginBottom: "24px",
           }}
         >
-          Or just reach out directly
+          Reach out directly
         </div>
-        <a
-          href={`mailto:${EMAIL}`}
-          style={{
-            fontFamily: "var(--font-inter-tight), sans-serif",
-            fontSize: "clamp(36px, 6vw, 72px)",
-            fontWeight: 800,
-            letterSpacing: "-0.03em",
-            color: "var(--color-red)",
-            textDecoration: "underline",
-            textDecorationThickness: "3px",
-            textUnderlineOffset: "8px",
-          }}
-        >
-          {EMAIL}
-        </a>
+
+        <ObfuscatedEmail user="team" domain="lightnet" tld="org" />
+
+        {/* Honeypot — hidden from humans, irresistible to a class of dumb
+            scraper bots that gather every email-shaped string on a page.
+            This decoy gets harvested first, the real one stays safer. */}
         <div
+          aria-hidden="true"
           style={{
-            marginTop: "32px",
-            fontFamily: "var(--font-jetbrains-mono), monospace",
-            fontSize: "13px",
-            color: "var(--color-muted)",
-            letterSpacing: "0.06em",
+            position: "absolute",
+            left: "-10000px",
+            top: "auto",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
           }}
         >
-          Or find Zenka on{" "}
-          <a
-            href="https://instagram.com/zenkacaro"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: "var(--color-red)",
-              textDecoration: "underline",
-            }}
-          >
-            Instagram
+          <a href="mailto:decoy-do-not-email-honeypot-trap@spamtrap.lightnet.org">
+            decoy-do-not-email-honeypot-trap@spamtrap.lightnet.org
           </a>
         </div>
       </section>
 
-      {/* MAILCHIMP SIGNUP */}
+      {/* NEWSLETTER SIGNUP — prominent red banner CTA */}
       <section
         style={{
-          background: "var(--color-ink)",
+          background: "var(--color-red)",
           color: "var(--color-white)",
-          padding: "80px 32px",
+          padding: "100px 32px",
           textAlign: "center",
+          borderTop: "3px solid var(--color-ink)",
         }}
       >
         <div
           style={{
             fontFamily: "var(--font-jetbrains-mono), monospace",
-            fontSize: "12px",
-            letterSpacing: "0.16em",
+            fontSize: "13px",
+            letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "var(--color-red)",
-            marginBottom: "20px",
+            color: "var(--color-white)",
+            opacity: 0.9,
+            marginBottom: "24px",
           }}
         >
           Stay in the field
@@ -260,23 +143,26 @@ export default function ContactPage() {
         <h2
           className="section-display"
           style={{
-            fontSize: "clamp(36px, 5vw, 64px)",
+            fontSize: "clamp(40px, 6vw, 80px)",
             marginBottom: "24px",
+            lineHeight: 1.05,
           }}
         >
           Join the <em>list.</em>
         </h2>
         <p
           style={{
-            fontSize: "18px",
-            opacity: 0.85,
-            marginBottom: "40px",
-            maxWidth: "600px",
+            fontSize: "20px",
+            lineHeight: 1.5,
+            opacity: 0.95,
+            maxWidth: "640px",
             marginLeft: "auto",
             marginRight: "auto",
+            marginBottom: "40px",
           }}
         >
-          Occasional dispatches on the labs, the films, the experiments, and what&apos;s next.
+          Occasional dispatches on the labs, the films, the experiments, and
+          what&apos;s next.
         </p>
         <a
           href="https://zenka.us5.list-manage.com/subscribe?u=8ca585567b2039640781b2293&id=6706983f46"
@@ -284,27 +170,20 @@ export default function ContactPage() {
           rel="noopener noreferrer"
           style={{
             display: "inline-block",
-            padding: "20px 40px",
+            padding: "22px 48px",
             background: "var(--color-white)",
-            color: "var(--color-ink)",
+            color: "var(--color-red)",
             fontFamily: "var(--font-inter-tight), sans-serif",
-            fontSize: "15px",
+            fontSize: "17px",
             fontWeight: 800,
-            letterSpacing: "-0.01em",
+            letterSpacing: "-0.005em",
             border: "3px solid var(--color-white)",
+            textDecoration: "none",
           }}
         >
-          Subscribe →
+          Subscribe to the list →
         </a>
       </section>
-
-      <style>{`
-        .contact-card:hover { background: var(--color-red-soft) !important; }
-        @media (max-width: 900px) {
-          .contact-grid { grid-template-columns: 1fr !important; }
-          .contact-card { border-right: none !important; border-bottom: 3px solid var(--color-ink) !important; }
-        }
-      `}</style>
     </>
   );
 }

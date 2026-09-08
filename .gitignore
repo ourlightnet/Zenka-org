@@ -12,5 +12,8 @@
 .vscode/
 *.swp
 
+# Stray duplicate — the real one lives at site/public/BingSiteAuth.xml
+/BingSiteAuth.xml
+
 # Catch any nested node_modules outside /site/
 node_modules/

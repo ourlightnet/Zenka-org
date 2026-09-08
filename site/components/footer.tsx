@@ -36,7 +36,7 @@ export function Footer() {
           letterSpacing: "-0.02em",
         }}
       >
-        Zenka Caro<span style={{ color: "var(--color-red)" }}>.</span>
+        Zenka 2038 Caro<span style={{ color: "var(--color-red)" }}>.</span>
       </div>
       <div style={{ textAlign: "right" }}>
         © 2026 ·{" "}

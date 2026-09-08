@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local tooling
+.claude/
+
+# large local-only reference images (mirrors .vercelignore — not deployed, not tracked)
+/public/images/artwork-new/
+/public/images/articles/
+/public/images/_unsorted/
+/public/images/Home Page 1500x1000/
+/public/images/New Home Page Art 700 /

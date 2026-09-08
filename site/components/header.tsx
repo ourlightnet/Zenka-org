@@ -36,23 +36,43 @@ export function Header() {
         <NavLink href="/press">Press</NavLink>
       </nav>
 
-      <Link
-        href="/contact"
+      <div
         style={{
-          background: "var(--color-red)",
-          color: "var(--color-white)",
-          padding: "10px 18px",
+          display: "flex",
+          gap: "16px",
+          alignItems: "center",
           fontFamily: "var(--font-jetbrains-mono), monospace",
           fontSize: "12px",
           fontWeight: 500,
           letterSpacing: "0.06em",
           textTransform: "uppercase",
-          transition: "background 0.15s",
         }}
-        className="hover:[background:var(--color-red-deep)]"
       >
-        Get in touch
-      </Link>
+        <a
+          href="https://instagram.com/zenkacaro"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline hover:[color:var(--color-red)]"
+          style={{
+            color: "var(--color-ink)",
+            transition: "color 0.15s",
+          }}
+        >
+          Instagram ↗
+        </a>
+        <Link
+          href="/contact"
+          style={{
+            background: "var(--color-red)",
+            color: "var(--color-white)",
+            padding: "10px 18px",
+            transition: "background 0.15s",
+          }}
+          className="hover:[background:var(--color-red-deep)]"
+        >
+          Get in touch
+        </Link>
+      </div>
     </header>
   );
 }
