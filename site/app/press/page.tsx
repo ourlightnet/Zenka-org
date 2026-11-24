@@ -111,8 +111,9 @@ export default function PressPage() {
 
       <FeaturedAtBlock
         label="As featured at"
-        outlets={["Forbes", "Sotheby's New York", "TEDx Jackson Hole", "IONS"]}
+        outlets={["Psionics", "Forbes", "Sotheby's New York", "TEDx Jackson Hole", "IONS"]}
       />
+      <FilmSpotlight />
       <FeaturedMedia />
 
       <PullQuote
@@ -324,6 +325,111 @@ function PullQuote({
           — {attribution}
         </div>
       </div>
+    </section>
+  );
+}
+
+// FilmSpotlight — full-width feature for the Psionics documentary,
+// shown above the Featured media grid.
+function FilmSpotlight() {
+  return (
+    <section
+      style={{
+        borderTop: "3px solid var(--color-ink)",
+        padding: "56px 32px",
+        maxWidth: "1280px",
+        margin: "0 auto",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--font-jetbrains-mono), monospace",
+          fontSize: "12px",
+          fontWeight: 500,
+          letterSpacing: "0.16em",
+          textTransform: "uppercase",
+          color: "var(--color-red)",
+          marginBottom: "20px",
+        }}
+      >
+        Feature film · September 2026
+      </div>
+      <div
+        className="film-spotlight"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "3fr 2fr",
+          gap: "40px",
+          alignItems: "center",
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            aspectRatio: "16 / 9",
+            overflow: "hidden",
+            background: "var(--color-ink)",
+            border: "3px solid var(--color-ink)",
+          }}
+        >
+          <iframe
+            src="https://www.youtube.com/embed/ViDTuFj_ATA?rel=0"
+            title="Psionics: The Minds That Summon UFOs (trailer)"
+            style={{ width: "100%", height: "100%", border: 0, display: "block" }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+        <div>
+          <h2
+            className="section-display"
+            style={{ fontSize: "clamp(36px, 4.5vw, 56px)", marginBottom: "20px" }}
+          >
+            Psionics: <em>The Minds That Summon UFOs.</em>
+          </h2>
+          <p style={{ fontSize: "17px", lineHeight: 1.6, marginBottom: "12px" }}>
+            Zenka appears in Psionics, a feature documentary about people who
+            claim that consciousness is part of the UFO phenomenon, from the
+            CE-5 community to experiencers and researchers.
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "11px",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: "var(--color-muted)",
+              marginBottom: "28px",
+            }}
+          >
+            Directed by Glenn Barden · Presented by Vetted · 1h 48m
+          </p>
+          <a
+            href="https://www.psionics.film"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              padding: "16px 28px",
+              background: "var(--color-red)",
+              color: "var(--color-white)",
+              fontFamily: "var(--font-jetbrains-mono), monospace",
+              fontSize: "13px",
+              fontWeight: 500,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+            }}
+          >
+            Watch the film ↗
+          </a>
+        </div>
+      </div>
+      <style>{`
+        @media (max-width: 900px) {
+          .film-spotlight { grid-template-columns: 1fr !important; gap: 24px !important; }
+        }
+      `}</style>
     </section>
   );
 }

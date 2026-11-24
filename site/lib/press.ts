@@ -56,7 +56,7 @@ export const talks: PressEntry[] = [
 // Newest first. Includes podcast appearances, TV interviews, documentaries,
 // short films, and radio segments.
 export const interviews: PressEntry[] = [
-  { date: "2026", title: "Psionics: The Minds That Summon UFOs", source: "Feature documentary by Glenn Barden, from Vetted", url: "https://www.psionics.film" },
+  { date: "September 2026", title: "Psionics: The Minds That Summon UFOs", source: "Feature documentary by Glenn Barden, from Vetted", url: "https://www.psionics.film", thumbnail: "https://i.ytimg.com/vi/ViDTuFj_ATA/hqdefault.jpg" },
   { date: "March 19, 2026", title: "Zenka Caro, Founder of LightNet", source: "Conscious Awakening Network", url: "https://www.youtube.com/watch?v=3TvVUu61Jfg" },
   { date: "January 13, 2026", title: "Jimmy Church, Fade to Black — Contact ET, Ep. 2264", source: "Fade to Black", url: "https://www.youtube.com/watch?v=wXevLd1v1Jg" },
   { date: "March 25, 2025", title: "Bridge to the Galaxy with Adam Cupell", source: "Alliance for Extraterrestrial Diplomatic Contact", url: "https://www.youtube.com/watch?v=2T1Qq2ixMNM" },
