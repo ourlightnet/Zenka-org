@@ -241,14 +241,6 @@ export const projects: Project[] = [
     heroImage: "/images/projects/48-hour-comedy-lab/hero.jpg",
     hoverImage: "/images/projects/48-hour-comedy-lab/hover.jpg",
     cta: "Learn more",
-    links: [
-      { label: "Comedy Lab Sedona website", url: "https://comedylabsedona.com/" },
-      { label: "Vote on the opening lines", url: "https://comedylabsedona.com/lines.html" },
-      { label: "Apply for a seat (comedian, editor, crew)", url: "https://comedylabsedona.com/seat.html" },
-      { label: "Fund the research", url: "https://comedylabsedona.com/fund.html" },
-      { label: "Follow on Instagram", url: "https://www.instagram.com/comedylabsedona" },
-      { label: "Watch on YouTube", url: "https://www.youtube.com/@comedylabsedona" },
-    ],
     snapshot: {
       people: [
         "Zenka Caro — creative direction",
