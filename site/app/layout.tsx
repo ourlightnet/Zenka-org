@@ -64,6 +64,8 @@ export const metadata: Metadata = {
     "VR history sculpture",
     "Fashion Lab Sedona",
     "48 Hour Comedy Lab",
+    "Comedy Lab Sedona",
+    "Psionics documentary",
     "Love Army",
     "Words of the Future",
     "Remote Controls art",
