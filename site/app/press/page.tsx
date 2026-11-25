@@ -389,9 +389,8 @@ function FilmSpotlight() {
             Psionics: <em>The Minds That Summon UFOs.</em>
           </h2>
           <p style={{ fontSize: "17px", lineHeight: 1.6, marginBottom: "12px" }}>
-            Zenka appears in Psionics, a feature documentary about people who
-            claim that consciousness is part of the UFO phenomenon, from the
-            CE-5 community to experiencers and researchers.
+            Zenka is prominently featured in Psionics, a feature documentary
+            by Vetted about spoon bending, psychic phenomena, and UFO craft.
           </p>
           <p
             style={{
